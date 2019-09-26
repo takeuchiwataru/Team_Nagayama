@@ -21,7 +21,6 @@
 #include "pressAnyButton.h"
 #include "sound.h"
 #include "number.h"
-#include "life.h"
 #include "text.h"
 #include "resource.h"
 #include "health.h"

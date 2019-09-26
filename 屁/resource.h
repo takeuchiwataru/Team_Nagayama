@@ -35,6 +35,7 @@ public:
 		MODEL_GOAL,			// ƒS[ƒ‹
 		MODEL_OBSTACLE,		// áŠQ•¨
 		MODEL_BULLET,		// ’e
+		MODEL_MEGURO,		// –Ú•
 	} MODEL;
 
 	typedef enum // cpp‚Ì‚â‚Â‚Æ”‚Æ•À‚Ñ‚ð‘µ‚¦‚é

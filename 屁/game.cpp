@@ -27,7 +27,6 @@
 #include "coin.h"
 #include "field.h"
 #include "number.h"
-#include "life.h"
 #include "text.h"
 #include "health.h"
 #include "onararemain.h"
@@ -60,7 +59,6 @@
 //=============================================================================
 CScore *CGame::m_pScore = NULL;
 CNumBlock *CGame::m_pNumBlock = NULL;
-CLife *CGame::m_pLife = NULL;
 CHealth *CGame::m_pHealth = NULL;
 COnaraRemain *CGame::m_pOnaraRemain = NULL;
 CPlayer *CGame::m_pPlayer = NULL;
@@ -129,11 +127,7 @@ HRESULT CGame::Init(void)
 		m_pScore = CScore::Create(SCORE_POS, SCORE_HEIGHT, SCORE_WIDTH);
 	}
 
-	if (m_pLife == NULL)
-	{
-		// ライフの生成
-		m_pLife = CLife::Create(LIFE_POS, LIFE_SIZE);
-	}
+	
 
 	if (m_pOnaraRemain == NULL)
 	{
@@ -161,7 +155,6 @@ void CGame::Uninit(void)
 	// 情報を空にする
 	m_pScore = NULL;
 	m_pNumBlock = NULL;
-	m_pLife = NULL;
 	m_pHealth = NULL;
 	m_pPlayer = NULL;
 	m_pOnaraRemain = NULL;
@@ -271,13 +264,7 @@ CNumBlock *CGame::GetNumBlock(void)
 	return m_pNumBlock;
 }
 
-//=============================================================================
-// 残機の取得
-//=============================================================================
-CLife *CGame::GetLife(void)
-{
-	return m_pLife;
-}
+
 //=============================================================================
 // おなら残機の取得
 //=============================================================================
