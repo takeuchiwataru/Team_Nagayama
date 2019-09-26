@@ -45,7 +45,7 @@ CShadow *CPlayer::m_pShadow = NULL;
 //*****************************************************************************
 // マクロ定義
 //*****************************************************************************
-#define MOVE_PLAYER				(3.0f)									//プレイヤー移動量
+#define MOVE_PLAYER				(6.0f)									//プレイヤー移動量
 #define MOVE_INERTIA			(1.0f)									//プレイヤーの慣性
 #define PLAYER_COLLISION		(D3DXVECTOR3(15.0f, 65.0f, 15.0f))		//プレイヤーの当たり判定
 #define ITEM_COLLISION			(40.0f)									//アイテムの当たり判定
@@ -64,7 +64,7 @@ CShadow *CPlayer::m_pShadow = NULL;
 #define PLAYER_FALL				(150.0f)								// 落ちる判定
 #define PLAYER_WALK				(0.25f)									// 歩いてる速さの最低値
 #define JUMP					(9.0f)									// ジャンプ力
-#define GRAVITY					(0.5f)									// 重力
+#define GRAVITY					(0.4f)									// 重力
 #define RESPAWN_POS				(D3DXVECTOR3(80.0f, 40.0f, 250.0f))		// リスポーン位置
 #define BLOCK_PARTICLE_POS		(D3DXVECTOR3(m_SetBlockPos.x, m_SetBlockPos.y - 20.0f, m_SetBlockPos.z))	// ブロック出現のパーティクルの位置
 #define BLOCK_PARTICLE_SIZE		(5.0f)	// ブロック出現のパーティクルのサイズ
@@ -264,9 +264,6 @@ void CPlayer::Uninit(void)
 //=============================================================================
 void CPlayer::Update(void)
 {
-	// ブロックの設置
-	SetBlock();
-
 	// プレイヤーの動き
 	Move();
 
@@ -287,6 +284,7 @@ void CPlayer::Update(void)
 	CDebugProc::Print("n", m_nKey);
 	CDebugProc::Print("n", m_aMotionInfo[m_State].nNumKey);
 	CDebugProc::Print("nc", m_nCountMotion, " / 60");
+	CDebugProc::Print("cf", "move.y : ", m_move.y);
 
 	if (m_bLand == true)
 	{
@@ -423,218 +421,86 @@ void CPlayer::Move(void)
 	//=====================================================
 	float fMovePlayer = MOVE_PLAYER;	// プレイヤーの移動量を設定
 
-	if (pInputKeyboard->GetPress(DIK_X) == true || pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LB))
-	{
-		fMovePlayer = MOVE_PLAYER * 0.5f;
-		if (m_State != STATE_BLOCK && m_State != STATE_BREAK && m_State != STATE_UPBREAK)
-		{
-			// ジョイパット
-			if (pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_UP) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_DOWN) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_RIGHT) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_LEFT) == true)
-			{// 左スティック
-				m_move.x -= sinf(cameraRot.y - pInputJoypad->GetLeftAxiz()) * (fMovePlayer * 1.0f);
-				m_move.z -= cosf(cameraRot.y - pInputJoypad->GetLeftAxiz()) * (fMovePlayer * 1.0f);
-			}
+	fMovePlayer = MOVE_PLAYER;
 
-			if (pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_UP) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_DOWN) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_RIGHT) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LEFT) == true)
-			{// 十字キー
-				m_move.x += sinf(cameraRot.y + pInputJoypad->GetRadian()) * (fMovePlayer * 1.0f);
-				m_move.z += cosf(cameraRot.y + pInputJoypad->GetRadian()) * (fMovePlayer * 1.0f);
-			}
+	// ジョイパット
+	if (pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_UP) == true ||
+		pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_DOWN) == true ||
+		pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_RIGHT) == true ||
+		pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_LEFT) == true)
+	{// 左スティック
+		m_move.x -= sinf(cameraRot.y - pInputJoypad->GetLeftAxiz()) * (fMovePlayer * 1.0f);
+		m_move.z -= cosf(cameraRot.y - pInputJoypad->GetLeftAxiz()) * (fMovePlayer * 1.0f);
 
-			//任意のキー←
-			if (pInputKeyboard->GetPress(DIK_A) == true)
-			{
-				if (pInputKeyboard->GetPress(DIK_W) == true)
-				{//左上移動
-				 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.75f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.75f) * fMovePlayer;
-				}
-				else if (pInputKeyboard->GetPress(DIK_S) == true)
-				{//左下移動
-				 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.25f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.25f) * fMovePlayer;
-				}
-				else
-				{	//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.5f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.5f) * fMovePlayer;
-				}
-			}
-			//任意のキー→
-			else if (pInputKeyboard->GetPress(DIK_D) == true)
-			{
-				if (pInputKeyboard->GetPress(DIK_W) == true)
-				{//右上移動
-				 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.75f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.75f) * fMovePlayer;
-				}
-				else if (pInputKeyboard->GetPress(DIK_S) == true)
-				{//右下移動
-				 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.25f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.25f) * fMovePlayer;
-				}
-				else
-				{	//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
-				}
-			}
-			//任意のキー↑
-			else if (pInputKeyboard->GetPress(DIK_W) == true)
-			{	//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-				m_move.x += sinf(cameraRot.y) * fMovePlayer;
-				m_move.z += cosf(cameraRot.y) * fMovePlayer;
-			}
-			//任意のキー↓
-			else if (pInputKeyboard->GetPress(DIK_S) == true)
-			{
-				//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-				m_move.x -= sinf(cameraRot.y) * fMovePlayer;
-				m_move.z -= cosf(cameraRot.y) * fMovePlayer;
-			}
-		}
-	}
-	else
-	{
-		if (m_State != STATE_BLOCK && m_State != STATE_BREAK && m_State != STATE_UPBREAK)
-		{
-			// ジョイパット
-			if (pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_UP) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_DOWN) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_RIGHT) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_LEFT) == true)
-			{// 左スティック
-				m_move.x -= sinf(cameraRot.y - pInputJoypad->GetLeftAxiz()) * (fMovePlayer * 1.0f);
-				m_move.z -= cosf(cameraRot.y - pInputJoypad->GetLeftAxiz()) * (fMovePlayer * 1.0f);
-
-				m_fDestAngle = cameraRot.y - pInputJoypad->GetLeftAxiz();
-			}
-
-			if (pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_UP) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_DOWN) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_RIGHT) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LEFT) == true)
-			{// 十字キー
-				m_move.x += sinf(cameraRot.y + pInputJoypad->GetRadian()) * (fMovePlayer * 1.0f);
-				m_move.z += cosf(cameraRot.y + pInputJoypad->GetRadian()) * (fMovePlayer * 1.0f);
-
-				m_fDestAngle = cameraRot.y + pInputJoypad->GetRadian() - D3DX_PI;
-			}
-
-			//任意のキー←
-			if (pInputKeyboard->GetPress(DIK_A) == true)
-			{
-				if (pInputKeyboard->GetPress(DIK_W) == true)
-				{//左上移動
-				 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.75f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.75f) * fMovePlayer;
-					m_fDestAngle = (cameraRot.y + D3DX_PI * 0.75f);
-				}
-				else if (pInputKeyboard->GetPress(DIK_S) == true)
-				{//左下移動
-				 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.25f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.25f) * fMovePlayer;
-					m_fDestAngle = (cameraRot.y + D3DX_PI * 0.25f);
-				}
-				else
-				{	//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.5f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.5f) * fMovePlayer;
-					m_fDestAngle = (cameraRot.y + D3DX_PI * 0.5f);
-				}
-			}
-			//任意のキー→
-			else if (pInputKeyboard->GetPress(DIK_D) == true)
-			{
-				if (pInputKeyboard->GetPress(DIK_W) == true)
-				{//右上移動
-				 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.75f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.75f) * fMovePlayer;
-					m_fDestAngle = (cameraRot.y - D3DX_PI * 0.75f);
-				}
-				else if (pInputKeyboard->GetPress(DIK_S) == true)
-				{//右下移動
-				 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.25f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.25f) * fMovePlayer;
-					m_fDestAngle = (cameraRot.y - D3DX_PI * 0.25f);
-				}
-				else
-				{	//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
-					m_fDestAngle = (cameraRot.y - D3DX_PI * 0.5f);
-				}
-			}
-			//任意のキー↑
-			else if (pInputKeyboard->GetPress(DIK_W) == true)
-			{	//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-				m_move.x += sinf(cameraRot.y) * fMovePlayer;
-				m_move.z += cosf(cameraRot.y) * fMovePlayer;
-				m_fDestAngle = (cameraRot.y + D3DX_PI * 1.0f);
-			}
-			//任意のキー↓
-			else if (pInputKeyboard->GetPress(DIK_S) == true)
-			{
-				//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-				m_move.x -= sinf(cameraRot.y) * fMovePlayer;
-				m_move.z -= cosf(cameraRot.y) * fMovePlayer;
-				m_fDestAngle = (cameraRot.y + D3DX_PI * 0.0f);
-			}
-		}
-
-		//向きの慣性
-		m_fDiffAngle = m_fDestAngle - m_rot.y;
-
-		//角度の設定
-		if (m_fDiffAngle > D3DX_PI)
-		{
-			m_fDiffAngle -= D3DX_PI* 2.0f;
-		}
-		if (m_fDiffAngle < -D3DX_PI)
-		{
-			m_fDiffAngle += D3DX_PI* 2.0f;
-		}
-
-		m_rot.y += m_fDiffAngle * 0.1f;
-
-		if (m_rot.y > D3DX_PI)
-		{
-			m_rot.y -= D3DX_PI* 2.0f;
-		}
-		if (m_rot.y < -D3DX_PI)
-		{
-			m_rot.y += D3DX_PI* 2.0f;
-		}
+		m_fDestAngle = cameraRot.y - pInputJoypad->GetLeftAxiz();
 	}
 
-	if (m_bJump == false && m_pos.y >= 0)
-	{
-		if (pInputKeyboard->GetTrigger(DIK_SPACE) == true || pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_A) == true)
-		{
-			pSound->PlaySound(CSound::SOUND_LABEL_SE_JUMP);
+	if (pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_UP) == true ||
+		pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_DOWN) == true ||
+		pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_RIGHT) == true ||
+		pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LEFT) == true)
+	{// 十字キー
+		m_move.x += sinf(cameraRot.y + pInputJoypad->GetRadian()) * (fMovePlayer * 1.0f);
+		m_move.z += cosf(cameraRot.y + pInputJoypad->GetRadian()) * (fMovePlayer * 1.0f);
 
-			// プレイヤーをジャンプ状態
-			m_bJump = true;
-			// ジャンプ力
-			m_move.y -= (cosf(D3DX_PI * 1.0f) * JUMP);
-			// キーとフレームを0にする
-			m_nKey = 0;
-			m_nCountMotion = 0;
-		}
+		m_fDestAngle = cameraRot.y + pInputJoypad->GetRadian() - D3DX_PI;
+	}
+
+	//任意のキー←
+	if (pInputKeyboard->GetPress(DIK_A) == true)
+	{
+		//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+		m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.5f) * fMovePlayer;
+		m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.5f) * fMovePlayer;
+		m_fDestAngle = (cameraRot.y + D3DX_PI * 0.5f);
+
+	}
+	//任意のキー→
+	else if (pInputKeyboard->GetPress(DIK_D) == true)
+	{
+		//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+			m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
+			m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
+			m_fDestAngle = (cameraRot.y - D3DX_PI * 0.5f);
+	}
+
+	//向きの慣性
+	m_fDiffAngle = m_fDestAngle - m_rot.y;
+
+	//角度の設定
+	if (m_fDiffAngle > D3DX_PI)
+	{
+		m_fDiffAngle -= D3DX_PI* 2.0f;
+	}
+	if (m_fDiffAngle < -D3DX_PI)
+	{
+		m_fDiffAngle += D3DX_PI* 2.0f;
+	}
+
+	m_rot.y += m_fDiffAngle * 0.1f;
+
+	if (m_rot.y > D3DX_PI)
+	{
+		m_rot.y -= D3DX_PI* 2.0f;
+	}
+	if (m_rot.y < -D3DX_PI)
+	{
+		m_rot.y += D3DX_PI* 2.0f;
+	}
+
+	if (pInputKeyboard->GetTrigger(DIK_W) == true || pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_A) == true)
+	{
+		m_move.y = 0.0f;
+
+		pSound->PlaySound(CSound::SOUND_LABEL_SE_JUMP);
+
+		// プレイヤーをジャンプ状態
+		m_bJump = true;
+		// ジャンプ力
+		m_move.y -= (cosf(D3DX_PI * 1.0f) * JUMP);
+		// キーとフレームを0にする
+		m_nKey = 0;
+		m_nCountMotion = 0;
 	}
 
 	if (m_move.x < PLAYER_WALK && m_move.x > -PLAYER_WALK && m_move.z < PLAYER_WALK && m_move.z > -PLAYER_WALK && m_bJump == false && m_State != STATE_BLOCK && m_State != STATE_BREAK && m_State != STATE_UPBREAK && m_State != STATE_LAND)
@@ -678,7 +544,10 @@ void CPlayer::Move(void)
 	m_move.z += (0.0f - m_move.z) * MOVE_INERTIA;
 
 	// 重力加算
-	m_move.y -= cosf(D3DX_PI * 0.0f) * GRAVITY;
+	if (m_move.y > -30.0f)
+	{
+		m_move.y -= cosf(D3DX_PI * 0.0f) * GRAVITY;
+	}
 }
 
 //=============================================================================

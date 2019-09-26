@@ -105,7 +105,7 @@ HRESULT CGame::Init(void)
 	LoadCoin();
 
 	// プレイヤーの生成
-	CPlayer::Create(D3DXVECTOR3(80.0f, 50.0f, 250.0f));
+	CPlayer::Create(D3DXVECTOR3(80.0f, 70000.0f, 250.0f));
 
 	BlockCreate();
 	FieldCreate();
@@ -160,25 +160,25 @@ void CGame::Update(void)
 	// フェード取得
 	CFade *pFade = CManager::GetFade();
 
-	if (CPlayer::GetGoal() == true)
-	{// ゴールしたら
-		if (CFade::GetFade() == CFade::FADE_NONE)
-		{// ゲームクリアに遷移
-			CManager::GetRankingScore(m_pScore->GetScore());
-			CManager::GetScore(m_pScore->GetScore());
+	//if (CPlayer::GetGoal() == true)
+	//{// ゴールしたら
+	//	if (CFade::GetFade() == CFade::FADE_NONE)
+	//	{// ゲームクリアに遷移
+	//		CManager::GetRankingScore(m_pScore->GetScore());
+	//		CManager::GetScore(m_pScore->GetScore());
 
-			pFade->SetFade(CManager::MODE_GAMECLEAR, CFade::FADE_OUT);
-		}
-	}
-	else if (CPlayer::GetGameOver() == true)
-	{
-		if (CFade::GetFade() == CFade::FADE_NONE)
-		{// ゲームオーバーに遷移
-			CManager::GetRankingScore(m_pScore->GetScore());
-			CManager::GetScore(m_pScore->GetScore());
-			pFade->SetFade(CManager::MODE_GAMEOVER, CFade::FADE_OUT);
-		}
-	}
+	//		pFade->SetFade(CManager::MODE_GAMECLEAR, CFade::FADE_OUT);
+	//	}
+	//}
+	//else if (CPlayer::GetGameOver() == true)
+	//{
+	//	if (CFade::GetFade() == CFade::FADE_NONE)
+	//	{// ゲームオーバーに遷移
+	//		CManager::GetRankingScore(m_pScore->GetScore());
+	//		CManager::GetScore(m_pScore->GetScore());
+	//		pFade->SetFade(CManager::MODE_GAMEOVER, CFade::FADE_OUT);
+	//	}
+	//}
 
 	// デバック用
 	if (pInputKeyboard->GetTrigger(DIK_1) == true)
@@ -428,8 +428,10 @@ void CGame::FieldCreate()
 	// メッシュフィールドの生成
 	//CMeshField::Create(D3DXVECTOR3(-200.0f, -1.5f, 1700.0f));
 
-	// メッシュシリンダーの生成
-	CMeshCylinder::Create(D3DXVECTOR3(-150.0f, 1500.0f, 500.0f), 2000.0f, 30.0f);
+	for (int nCntMesh = 1; nCntMesh < 13; nCntMesh++)
+	{// メッシュシリンダーの生成
+		CMeshCylinder::Create(D3DXVECTOR3(-150.0f, 6000.0f * nCntMesh, 500.0f), 2000.0f, 30.0f);
+	}
 
 	// ゴールの生成
 	CGoal::Create(D3DXVECTOR3(1166.0f, 0.0f, 533.0f));
