@@ -19,6 +19,7 @@ public:
 	{
 		SOUND_LABEL_BGM_TITLE = 0,	// BGM0 (OP)
 		SOUND_LABEL_BGM_TUTORIAL,	// BGM1	(TUTORIAL)
+		SOUND_LABEL_BGM_TUTORIAL0,	// BGM1	(TUTORIAL)
 		SOUND_LABEL_BGM_RESULTCLEAR,		// BGM3	(RESULT)
 		SOUND_LABEL_BGM_RESULTOVER,		// BGM3	(RESULT)
 		SOUND_LABEL_BGM_RANKING,	// BGM4	(RANKING)
@@ -67,8 +68,9 @@ private:
 	// 各音素材のパラメータ
 	SOUNDPARAM m_aSoundParam[SOUND_LABEL_MAX] =
 	{
-		{ "data/BGM/bgm000.wav", -1 },		// BGM0 (OP)
+		{ "data/BGM/title.wav", -1 },		// BGM0 (OP)
 		{ "data/BGM/GameBgm.wav", -1 },	// BGM1	(TUTORIAL / GAME)
+		{ "data/BGM/tutorial.wav", -1 },	// BGM1	(TUTORIAL / GAME)
 		{ "data/BGM/gameclear.wav", -1 },		// BGM3	(RESULT)
 		{ "data/BGM/gameover.wav", -1 },		// BGM4	(RESULT)
 		{ "data/BGM/ranking.wav", -1 },		// BGM4	(RANKING)

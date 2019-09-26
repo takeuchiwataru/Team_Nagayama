@@ -32,6 +32,7 @@ const char *CResource::m_apModelFilename[] =
 	"data\\MODEL\\goal.x",				// ゴールのモデル名
 	"data\\MODEL\\OBJECT\\obstacle.x",	// 障害物のモデル名
 	"data\\MODEL\\OBJECT\\bullet.x",	// 弾のモデル名
+	"data\\MODEL\\fullMegro.x",			// 全裸目黒のモデル名
 };
 
 // ヘッダの順番と同じにする

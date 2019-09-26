@@ -19,6 +19,7 @@
 #include "text.h"
 #include "resource.h"
 #include "titlelogo.h"
+#include "fullMeguro.h"
 
 //=============================================================================
 // 静的メンバ変数宣言
@@ -90,6 +91,8 @@ HRESULT CTitle::Init()
 
 	// パーティクルのマテリアルのロード
 	CParticleX::LoadMat();
+
+	CFullMeguro::Create(D3DXVECTOR3(685.0f, -140.0f, -1450.0f));
 
 	CPressAnyButton::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, 650.0f, 0.0f), 200.0f, 170.0f, CResource::TEXTURE_ANYBUTTON);
 

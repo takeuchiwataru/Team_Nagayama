@@ -17,7 +17,6 @@ class CScene3D;
 class CPlayer;
 class CScore;
 class CNumBlock;
-class CLife;
 class CHealth;
 class COnaraRemain;
 
@@ -45,7 +44,6 @@ public:
 	void Draw(void);			// ÉQÅ[ÉÄÇÃï`âÊ
 	static CScore *GetScore(void);
 	static CNumBlock *GetNumBlock(void);
-	static CLife *GetLife(void);
 	static CPlayer *GetPlayer(void) { return m_pPlayer; }
 	static CHealth *GetHealth(void) { return m_pHealth; }
 	static COnaraRemain *GetOnaraRemain(void);
@@ -59,7 +57,6 @@ public:
 private:
 	static CScore *m_pScore;
 	static CNumBlock *m_pNumBlock;
-	static CLife *m_pLife;
 	static CHealth *m_pHealth;
 	static COnaraRemain *m_pOnaraRemain;
 	static CPlayer *m_pPlayer;

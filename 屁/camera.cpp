@@ -177,7 +177,7 @@ void CCamera::SetCamera(void)
 	D3DXMatrixPerspectiveFovLH(&m_mtxProjection,
 		D3DXToRadian(45.0f),						// 視野角
 		(float)SCREEN_WIDTH / (float)SCREEN_HEIGHT,	// 画面比率	
-		100.0f,										// カメラからの距離（手前）
+		10.0f,										// カメラからの距離（手前）
 		10000.0f);									// カメラからの距離（奥）
 
 	// プロジェクションマトリックスの設定
