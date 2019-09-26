@@ -181,7 +181,7 @@ void CGame::Update(void)
 	// フェード取得
 	CFade *pFade = CManager::GetFade();
 
-	if (CPlayer::GetGoal() == true)
+	if (m_pPlayer->GetPolygonLand() == true)
 	{// ゴールしたら
 		if (CFade::GetFade() == CFade::FADE_NONE)
 		{// ゲームクリアに遷移
@@ -465,15 +465,7 @@ void CGame::FieldCreate()
 	CGoal::Create(D3DXVECTOR3(1166.0f, 0.0f, 533.0f));
 
 	// 床ポリゴンの生成
-	CFeild::Create(D3DXVECTOR3(0.0f, 0.5f, 220.0f), 700.0f, 700.0f, 10.0f, 10.0f);
-	CFeild::Create(D3DXVECTOR3(30.0f, 0.5f, 1430.0f), 300.0f, 300.0f, 5.0f, 5.0f);
-	CFeild::Create(D3DXVECTOR3(1050.0f, 0.4f, 1200.0f), 500.0f, 500.0f, 8.0f, 8.0f);
-	CFeild::Create(D3DXVECTOR3(450.0f, 0.5f, 1000.0f), 90.0f, 270.0f, 5.0f, 5.0f);
-	CFeild::Create(D3DXVECTOR3(1000.0f, 0.5f, 200.0f), 300.0f, 300.0f, 5.0f, 5.0f);
-	CFeild::Create(D3DXVECTOR3(1200.0f, 0.5f, 600.0f), 200.0f, 200.0f, 5.0f, 5.0f);
-
-	// 穴
-	CScene3D::Create(D3DXVECTOR3(550.0f, 0.0f, 700.0f), 700.0f, 700.0f, 1.0f, 1.0f);
+	CFeild::Create(D3DXVECTOR3(0.0f, 0.5f, 220.0f), 10000.0f, 10000.0f, 10.0f, 10.0f);
 
 	// コイン生成
 	for (int nCount = 0; nCount < 20; nCount++)
