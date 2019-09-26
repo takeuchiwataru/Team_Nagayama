@@ -17,6 +17,7 @@
 #include "number.h"
 #include "text.h"
 #include "resource.h"
+#include "gameOverLogo.h"
 
 //=============================================================================
 // 静的メンバ変数宣言
@@ -104,6 +105,7 @@ HRESULT CGameOver::Init(void)
 
 	// メッシュシリンダーの生成
 	CMeshCylinder::Create(D3DXVECTOR3(700.0f, 1700.0f, 0.0f), 2000.0, 30.0f);
+	CGameOverLogo::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, 200.0f, 0.0f), 400.0f, 150.0f, CResource::TEXTURE_OVER);
 
 	return S_OK;
 }
