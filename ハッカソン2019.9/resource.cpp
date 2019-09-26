@@ -57,6 +57,7 @@ const char *CResource::m_apTexFilename[] =
 	"data/TEXTURE/bullet000.png",				// 弾のテクスチャ名
 	"data\\TEXTURE\\life000.png",			// 体力のモデル名
 	"data\\TEXTURE\\TITLE\\title001.png",	// タイトルロゴ名
+	"data\\TEXTURE\\soil.jpg",		// チュートリアルロゴ名
 
 };
 
