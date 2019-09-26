@@ -24,7 +24,6 @@
 #include "field.h"
 #include "sound.h"
 #include "light.h"
-#include "life.h"
 #include "shadow.h"
 #include "text.h"
 #include "resource.h"
@@ -546,7 +545,6 @@ void CPlayer::Move(void)
 				m_nOnaraRemain--;
 
 				pOnaraRemain->AddOnaraRemain(-1);
-
 			}
 		}
 	}
@@ -1595,17 +1593,6 @@ void CPlayer::Life(void)
 	CManager::MODE mode;
 	mode = CManager::GetMode();
 
-	// Žc‹@Žæ“¾
-	CLife *pLife = NULL;
-
-	if (mode == CManager::MODE_TUTORIAL)
-	{
-		pLife = CTutorial::GetLife();
-	}
-	else if (mode == CManager::MODE_GAME)
-	{
-		pLife = CGame::GetLife();
-	}
 
 }
 
@@ -1627,12 +1614,12 @@ void CPlayer::Health(void)
 
 	if (mode == CManager::MODE_TUTORIAL)
 	{
-		pLife = CTutorial::GetLife();
+		
 		pHealth = CTutorial::GetHealth();
 	}
 	else if (mode == CManager::MODE_GAME)
 	{
-		pLife = CGame::GetLife();
+		
 		pHealth = CGame::GetHealth();
 	}
 

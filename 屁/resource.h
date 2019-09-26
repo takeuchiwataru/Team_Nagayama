@@ -35,6 +35,7 @@ public:
 		MODEL_GOAL,			// ゴール
 		MODEL_OBSTACLE,		// 障害物
 		MODEL_BULLET,		// 弾
+		MODEL_MEGURO,		// 目黒
 	} MODEL;
 
 	typedef enum // cppのやつと数と並びを揃える
@@ -62,6 +63,8 @@ public:
 		TEXTURE_TUTORIALLOGO,	// チュートリアルロゴ 竹内追加
 		TEXTURE_ONARAREMAIN,	// おなら残機 竹内追加
 		TEXTURE_HE,				// 屁
+		TEXTURE_RANKINGLOGO,	// ランキングロゴ竹内追加
+		TEXTURE_RANKINGRANK,	// ランキングロゴ竹内追加
 	} TEXTURE;
 
 	CResource();		// コンストラクタ

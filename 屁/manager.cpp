@@ -77,8 +77,8 @@ HRESULT CManager::Init(HINSTANCE hInstance, HWND hWnd, bool bWindow)
 	//m_mode = MODE_GAMEOVER;
 	//m_mode = MODE_GAME;
 	//m_mode = MODE_GAME;
-	m_mode = MODE_TITLE;
-	//m_mode = MODE_RANKING;;
+	//m_mode = MODE_TITLE;
+	m_mode = MODE_RANKING;;
 
 	m_fData = 0.0f;
 
@@ -534,7 +534,7 @@ void CManager::SetMode(MODE mode)
 	case MODE_TUTORIAL:
 		if (m_pTutorial != NULL)
 		{
-			m_pSound->StopSound(CSound::SOUND_LABEL_BGM_TUTORIAL);
+			m_pSound->StopSound(CSound::SOUND_LABEL_BGM_TUTORIAL0);
 			m_pTutorial->Uninit();
 
 			// ƒƒ‚ƒŠ‚ğŠJ•ú

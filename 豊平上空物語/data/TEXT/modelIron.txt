@@ -1,0 +1,58 @@
+SCRIPT
+NUM_MODEL = 18
+MODEL INFO
+ModelType 15
+POS = -211.6 0.0 993.4
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = -156.6 0.0 993.4
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = -101.6 0.0 993.4
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = -46.6 0.0 993.4
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = 8.4 0.0 993.4
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = 63.4 0.0 993.4
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = 118.4 0.0 993.4
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = 173.4 0.0 993.4
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = 223.4 0.0 993.4
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = -211.5 54.0 993.0
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = -157.0 54.0 993.0
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = -102.5 54.0 993.0
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = -47.5 54.0 993.0
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = 8.5 54.0 993.0
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = 64.0 54.0 993.0
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = 118.5 54.0 993.0
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = 172.5 54.0 993.0
+ROT = 0.0 0.0 0.0
+ModelType 15
+POS = 223.0 54.0 993.0
+ROT = 0.0 0.0 0.0
+ENDSCRIPT

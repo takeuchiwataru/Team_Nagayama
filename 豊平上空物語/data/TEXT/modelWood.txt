@@ -1,0 +1,19 @@
+SCRIPT
+NUM_MODEL = 5
+MODEL INFO
+ModelType 11
+POS = -209.7 0.0 1414.7
+ROT = 0.0 0.0 0.0
+ModelType 11
+POS = 221.8 0.0 1416.1
+ROT = 0.0 0.0 0.0
+ModelType 11
+POS = -98.7 0.0 1416.1
+ROT = 0.0 0.0 0.0
+ModelType 11
+POS = 12.8 0.0 1416.1
+ROT = 0.0 0.0 0.0
+ModelType 11
+POS = 116.8 0.0 1416.1
+ROT = 0.0 0.0 0.0
+ENDSCRIPT

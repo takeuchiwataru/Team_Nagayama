@@ -184,6 +184,7 @@
     <ClCompile Include="polygon.cpp" />
     <ClCompile Include="pressAnyBunnton.cpp" />
     <ClCompile Include="ranking.cpp" />
+    <ClCompile Include="rankinglogo.cpp" />
     <ClCompile Include="renderer.cpp" />
     <ClCompile Include="resource.cpp" />
     <ClCompile Include="scene.cpp" />
@@ -235,6 +236,7 @@
     <ClInclude Include="polygon.h" />
     <ClInclude Include="pressAnyButton.h" />
     <ClInclude Include="ranking.h" />
+    <ClInclude Include="rankinglogo.h" />
     <ClInclude Include="renderer.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="scene.h" />

@@ -1,0 +1,664 @@
+SCRIPT
+NUM_MODEL = 220
+MODEL INFO
+ModelType 4
+POS = 0.0 0.0 230.4
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 0.0 50.0 228.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 0.0 100.0 226.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 0.0 150.0 226.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 0.0 200.0 228.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 0.0 250.0 230.4
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 0.0 300.0 233.3
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 50.0 300.0 219.6
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 100.0 300.0 205.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 100.0 150.0 206.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 50.0 150.0 223.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 100.0 0.0 205.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 50.0 0.0 219.6
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 150.0 300.0 178.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 150.0 150.0 178.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 200.0 250.0 160.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 200.0 200.0 160.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 200.0 100.0 163.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 200.0 50.0 166.7
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 150.0 0.0 186.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 300.0 0.0 138.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 300.0 50.0 139.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 300.0 100.0 139.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 300.0 150.0 138.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 300.0 200.0 136.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 300.0 250.0 133.3
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 300.0 300.0 130.4
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 350.0 0.0 116.7
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 400.0 0.0 97.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 450.0 0.0 78.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 500.0 0.0 60.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 650.0 0.0 10.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 700.0 0.0 5.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 750.0 0.0 19.6
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 600.0 50.0 33.3
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 600.0 100.0 36.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 600.0 150.0 38.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 600.0 200.0 39.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 600.0 250.0 39.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 650.0 300.0 21.9
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 700.0 300.0 2.9
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 750.0 300.0 16.7
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 800.0 250.0 36.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 800.0 200.0 38.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 800.0 150.0 39.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 800.0 100.0 39.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 800.0 50.0 38.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 950.0 0.0 86.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1000.0 0.0 100.0
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1050.0 0.0 113.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1100.0 50.0 128.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 900.0 50.0 60.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 900.0 100.0 60.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 900.0 150.0 61.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 900.0 200.0 63.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 900.0 250.0 66.7
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 950.0 300.0 86.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1000.0 300.0 105.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1050.0 300.0 123.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1100.0 250.0 139.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1200.0 0.0 171.9
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1200.0 50.0 169.6
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1200.0 100.0 166.7
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1200.0 150.0 163.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1200.0 200.0 161.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1200.0 250.0 160.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1200.0 300.0 160.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1400.0 300.0 228.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1350.0 250.0 213.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1300.0 200.0 200.0
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1250.0 150.0 186.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1300.0 100.0 205.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1350.0 50.0 223.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1400.0 0.0 239.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -600.0 -500.0 428.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -600.0 -450.0 430.4
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -600.0 -400.0 433.3
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -600.0 -350.0 436.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -600.0 -300.0 438.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -550.0 -250.0 423.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -500.0 -200.0 406.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -450.0 -200.0 388.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -400.0 -200.0 369.6
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -400.0 -300.0 366.7
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -400.0 -350.0 363.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -400.0 -400.0 361.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -400.0 -450.0 360.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -400.0 -500.0 360.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -400.0 -250.0 361.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -550.0 -400.0 419.6
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -500.0 -400.0 400.0
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -450.0 -400.0 380.4
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -300.0 -500.0 330.4
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -300.0 -450.0 333.3
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -300.0 -400.0 336.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -300.0 -350.0 338.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -300.0 -300.0 339.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -300.0 -250.0 339.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -300.0 -200.0 338.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -250.0 -200.0 319.6
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -200.0 -200.0 300.0
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -150.0 -200.0 280.4
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -100.0 -250.0 261.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -100.0 -300.0 260.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -100.0 -350.0 260.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -100.0 -400.0 261.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -100.0 -450.0 263.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -150.0 -500.0 283.3
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -200.0 -500.0 302.9
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = -250.0 -500.0 321.9
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 0.0 -200.0 239.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 0.0 -250.0 239.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 0.0 -300.0 238.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 0.0 -350.0 236.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 0.0 -400.0 233.3
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 50.0 -450.0 213.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 100.0 -500.0 194.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 150.0 -450.0 176.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 200.0 -400.0 160.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 200.0 -350.0 161.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 200.0 -300.0 163.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 200.0 -250.0 166.7
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 200.0 -200.0 169.6
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 300.0 -200.0 138.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 300.0 -250.0 139.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 300.0 -300.0 139.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 300.0 -350.0 138.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 300.0 -400.0 136.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 300.0 -450.0 133.3
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 300.0 -500.0 130.4
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 350.0 -500.0 111.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 400.0 -500.0 93.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 450.0 -500.0 76.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 500.0 -500.0 61.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 350.0 -350.0 113.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 400.0 -350.0 100.0
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 450.0 -350.0 86.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 350.0 -200.0 121.9
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 400.0 -200.0 106.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 450.0 -200.0 89.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 500.0 -200.0 71.9
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 600.0 -200.0 36.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 600.0 -250.0 33.3
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 600.0 -300.0 30.4
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 600.0 -350.0 28.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 600.0 -400.0 26.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 600.0 -450.0 26.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 600.0 -500.0 28.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 650.0 -300.0 13.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 700.0 -350.0 0.0
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 750.0 -400.0 13.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 800.0 -500.0 28.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 800.0 -450.0 26.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 800.0 -400.0 26.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 800.0 -350.0 28.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 800.0 -300.0 30.4
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 800.0 -250.0 33.3
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 800.0 -200.0 36.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 900.0 -200.0 71.9
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 950.0 -200.0 89.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1000.0 -200.0 106.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1050.0 -200.0 121.9
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1100.0 -200.0 136.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1000.0 -250.0 100.0
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1000.0 -300.0 97.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1000.0 -350.0 94.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1000.0 -400.0 93.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1000.0 -450.0 93.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1000.0 -500.0 94.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1200.0 -200.0 171.9
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1200.0 -250.0 173.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1200.0 -300.0 173.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1200.0 -350.0 171.9
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1200.0 -400.0 169.6
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1200.0 -450.0 166.7
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1250.0 -500.0 180.4
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1300.0 -500.0 194.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1350.0 -500.0 210.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1400.0 -450.0 226.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1400.0 -400.0 228.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1400.0 -350.0 230.4
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1400.0 -300.0 233.3
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1400.0 -250.0 236.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1400.0 -200.0 238.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1500.0 -200.0 273.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1500.0 -250.0 273.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1500.0 -300.0 271.9
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1500.0 -350.0 269.6
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1500.0 -400.0 266.7
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1500.0 -450.0 263.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1500.0 -500.0 261.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1550.0 -200.0 276.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1600.0 -200.0 293.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1650.0 -200.0 311.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1700.0 -250.0 330.4
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1700.0 -300.0 333.3
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1650.0 -350.0 319.6
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1600.0 -350.0 305.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1550.0 -350.0 289.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1600.0 -400.0 306.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1650.0 -450.0 321.9
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1700.0 -500.0 336.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1800.0 -500.0 366.7
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1800.0 -450.0 363.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1800.0 -400.0 361.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1800.0 -350.0 360.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1800.0 -300.0 360.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1800.0 -250.0 361.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1800.0 -200.0 363.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1850.0 -200.0 383.3
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1900.0 -200.0 402.9
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1950.0 -200.0 421.9
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 2000.0 -200.0 439.8
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1950.0 -350.0 423.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1900.0 -350.0 405.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1850.0 -350.0 386.2
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1850.0 -500.0 383.3
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1900.0 -500.0 397.1
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 1950.0 -500.0 411.5
+ROT = 0.0 0.0 0.0
+ModelType 4
+POS = 2000.0 -500.0 426.8
+ROT = 0.0 0.0 0.0
+ENDSCRIPT
