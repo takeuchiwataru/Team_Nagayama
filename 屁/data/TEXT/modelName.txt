@@ -1,0 +1,26 @@
+#==============================================================================
+#
+# モデルファイル [modelName.txt]
+# Author : 長山拓実
+#
+#==============================================================================
+SCRIPT			# この行は絶対消さないこと！
+
+#------------------------------------------------------------------------------
+# モデルファイル名
+#------------------------------------------------------------------------------
+MODEL_FILENAME = data/MODEL/OBJECT/wood4.x		# 木の塊
+MODEL_FILENAME = data/MODEL/OBJECT/obstacle.x	# 地面ブロック
+MODEL_FILENAME = data/MODEL/OBJECT/tree000.x	# 木
+MODEL_FILENAME = data/MODEL/OBJECT/plamtree.x	# 木
+MODEL_FILENAME = data/MODEL/OBJECT/stone000.x	# 岩
+MODEL_FILENAME = data/MODEL/OBJECT/stone001.x	# 岩
+MODEL_FILENAME = data/MODEL/OBJECT/stone002.x	# 岩
+MODEL_FILENAME = data/MODEL/OBJECT/stone100.x	# 岩
+MODEL_FILENAME = data/MODEL/OBJECT/stone101.x	# 岩
+MODEL_FILENAME = data/MODEL/OBJECT/stone102.x	# 岩
+MODEL_FILENAME = data/MODEL/OBJECT/stone500.x	# 岩
+MODEL_FILENAME = data/MODEL/woodBox.x			# 木箱
+MODEL_FILENAME = data/MODEL/OBJECT/longstone.x	# 岩
+MODEL_FILENAME = data/MODEL/OBJECT/longstone001.x	# 岩
+MODEL_FILENAME = data/MODEL/OBJECT/eraser.x		# 消しゴム (一番最後に書く)

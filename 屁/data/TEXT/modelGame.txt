@@ -1,0 +1,394 @@
+SCRIPT
+NUM_MODEL = 130
+MODEL INFO
+ModelType 2
+POS = -90.0 0.0 0.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 10.0 0.0 0.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 115.0 0.0 0.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 220.0 0.0 0.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 325.0 0.0 0.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 650.0 0.0 0.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 760.0 0.0 0.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 865.0 0.0 0.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 970.0 0.0 0.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1075.0 0.0 0.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1180.0 0.0 0.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1285.0 0.0 0.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1330.0 0.0 90.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1331.1 0.0 195.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1332.3 0.0 300.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1333.5 0.0 415.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1329.7 0.0 525.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1330.8 0.0 630.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1332.0 0.0 735.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1333.1 0.0 840.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1329.2 0.0 945.1
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1330.4 0.0 1055.1
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1331.5 0.0 1160.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1332.7 0.0 1265.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1328.8 0.0 1370.1
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1279.7 0.0 1460.6
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1169.8 0.0 1463.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1064.8 0.0 1465.3
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 954.7 0.0 1462.6
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 849.7 0.0 1464.9
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 744.8 0.0 1465.8
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 634.8 0.0 1464.9
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 519.8 0.0 1463.9
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 409.8 0.0 1463.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 304.8 0.0 1462.1
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 199.8 0.0 1461.2
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 89.8 0.0 1460.3
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = -15.2 0.0 1459.4
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = -125.2 0.0 1463.5
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = -130.5 0.0 1358.5
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = -130.8 0.0 1243.5
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = -131.0 0.0 1133.5
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = -131.3 0.0 1023.5
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = -131.5 0.0 918.5
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = -131.8 0.0 813.5
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = -132.1 0.0 698.5
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = -132.3 0.0 583.5
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = -132.6 0.0 478.5
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = -132.9 0.0 368.5
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = -133.1 0.0 263.5
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = -133.4 0.0 153.5
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = -133.6 0.0 58.5
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 269.9 0.0 733.1
+ROT = 0.0 0.0 0.0
+ModelType 10
+POS = 288.3 0.0 617.5
+ROT = 0.0 0.0 0.0
+ModelType 3
+POS = 257.3 0.0 841.5
+ROT = 0.0 0.0 0.0
+ModelType 3
+POS = 224.0 0.0 953.2
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 254.7 0.0 1057.8
+ROT = 0.0 0.0 0.0
+ModelType 10
+POS = 256.0 0.0 1151.4
+ROT = 0.0 0.0 0.0
+ModelType 10
+POS = 288.1 0.0 111.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 266.0 0.0 305.6
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 296.5 0.0 214.0
+ROT = 0.0 0.0 0.0
+ModelType 10
+POS = 608.0 0.0 1155.0
+ROT = 0.0 0.0 0.0
+ModelType 10
+POS = 590.1 0.0 1059.5
+ROT = 0.0 0.0 0.0
+ModelType 10
+POS = 658.7 0.0 285.0
+ROT = 0.0 0.0 0.0
+ModelType 10
+POS = 678.7 0.0 325.0
+ROT = 0.0 0.0 0.0
+ModelType 3
+POS = 633.1 0.0 445.6
+ROT = 0.0 0.0 0.0
+ModelType 3
+POS = 657.2 0.0 569.7
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 600.4 0.0 661.6
+ROT = 0.0 0.0 0.0
+ModelType 3
+POS = 641.0 0.0 767.2
+ROT = 0.0 0.0 0.0
+ModelType 3
+POS = 569.4 0.0 878.7
+ROT = 0.0 0.0 0.0
+ModelType 3
+POS = 719.1 0.0 1156.9
+ROT = 0.0 0.0 0.0
+ModelType 3
+POS = 845.3 0.0 1118.9
+ROT = 0.0 0.0 0.0
+ModelType 10
+POS = 965.4 0.0 1199.0
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1055.1 0.0 1129.3
+ROT = 0.0 0.0 0.0
+ModelType 10
+POS = 250.1 0.0 545.7
+ROT = 0.0 0.0 0.0
+ModelType 10
+POS = 1036.1 0.0 823.7
+ROT = 0.0 0.0 0.0
+ModelType 10
+POS = 1006.1 0.0 758.7
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1006.1 0.0 653.7
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 974.3 0.0 556.8
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 1041.1 0.0 475.0
+ROT = 0.0 0.0 0.0
+ModelType 3
+POS = 974.3 0.0 378.2
+ROT = 0.0 0.0 0.0
+ModelType 10
+POS = 1100.5 0.0 389.4
+ROT = 0.0 0.0 0.0
+ModelType 10
+POS = 1165.5 0.0 389.4
+ROT = 0.0 0.0 0.0
+ModelType 10
+POS = 1235.5 0.0 389.4
+ROT = 0.0 0.0 0.0
+ModelType 3
+POS = 563.7 0.0 751.9
+ROT = 0.0 0.0 0.0
+ModelType 3
+POS = 789.4 0.0 1137.7
+ROT = 0.0 0.0 0.0
+ModelType 3
+POS = 596.8 0.0 956.8
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = -75.1 0.0 163.0
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = -75.1 0.0 413.0
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = -75.1 0.0 633.0
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = -80.1 0.0 863.0
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = -81.8 0.0 1051.3
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = -81.8 0.0 1246.3
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 193.4 0.0 165.5
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 192.8 0.0 633.8
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 190.8 0.0 863.8
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 189.2 0.0 1063.8
+ROT = 0.0 0.0 0.0
+ModelType 13
+POS = 71.0 0.0 1381.8
+ROT = 0.0 0.0 0.0
+ModelType 13
+POS = 331.0 0.0 1381.8
+ROT = 0.0 0.0 0.0
+ModelType 13
+POS = 591.0 0.0 1381.8
+ROT = 0.0 0.0 0.0
+ModelType 13
+POS = 856.0 0.0 1381.8
+ROT = 0.0 0.0 0.0
+ModelType 13
+POS = 1120.0 0.0 1382.3
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 1264.0 0.0 1247.1
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 1264.0 0.0 997.1
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 1260.2 0.0 754.7
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 1267.7 0.0 569.8
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 1072.8 0.0 564.0
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 1082.5 0.0 693.3
+ROT = 0.0 0.0 0.0
+ModelType 13
+POS = 793.5 0.0 1211.0
+ROT = 0.0 0.0 0.0
+ModelType 13
+POS = 929.9 0.0 1079.8
+ROT = 0.0 0.0 0.0
+ModelType 13
+POS = 781.5 0.0 1084.8
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 695.7 0.0 950.2
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 701.4 0.0 708.1
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 704.2 0.0 505.4
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 586.2 0.0 424.5
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 563.4 0.0 464.0
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 539.5 0.0 678.0
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 542.1 0.0 921.0
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 309.6 0.0 988.4
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 319.4 0.0 794.9
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 345.6 0.0 185.6
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 434.2 0.0 -2.6
+ROT = 0.0 0.0 0.0
+ModelType 2
+POS = 539.2 0.0 -5.0
+ROT = 0.0 0.0 0.0
+ModelType 13
+POS = 490.3 0.0 70.5
+ROT = 0.0 0.0 0.0
+ModelType 13
+POS = 750.5 0.0 70.4
+ROT = 0.0 0.0 0.0
+ModelType 13
+POS = 1020.6 0.0 70.9
+ROT = 0.0 0.0 0.0
+ModelType 13
+POS = 1162.4 0.0 74.2
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 1272.6 0.0 236.0
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 948.2 0.0 491.2
+ROT = 0.0 0.0 0.0
+ModelType 12
+POS = 937.3 0.0 656.2
+ROT = 0.0 0.0 0.0
+ENDSCRIPT
