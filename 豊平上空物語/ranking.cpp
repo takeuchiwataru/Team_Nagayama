@@ -109,18 +109,18 @@ HRESULT CRanking::Init()
 		{
 			aScore[nCntRanking] = CManager::GetRanking(nCntRanking);
 			// スコアの生成
-			m_apScore[nCntRanking] = CScore::Create(D3DXVECTOR3(SCREEN_WIDTH / 2 + 300.0f, 250.0f + (nCntRanking * 95.0f) + 20, 0.0f), 37.0f, 60.0f);
+			m_apScore[nCntRanking] = CScore::Create(D3DXVECTOR3(SCREEN_WIDTH / 2 + 200.0f, 250.0f + (nCntRanking * 95.0f) + 20, 0.0f), 37.0f, 60.0f);
 			m_apScore[nCntRanking]->AddScore(aScore[nCntRanking]);
 			m_apScore[nCntRanking]->SetColor(D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
 		}
 	}
 	
 	// ランキングロゴ
-	CRankingLogo::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, 200.0f, 0.0f), 300.0f, 200.0f, CResource::TEXTURE_RANKINGLOGO);
+	CRankingLogo::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, 100.0f, 0.0f), 300.0f, 100.0f, CResource::TEXTURE_RANKINGLOGO);
 
 
 	// ランキングランクロゴ
-	CRankingLogo2::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, 500.0f, 0.0f), 100.0, 250.0f, CResource::TEXTURE_RANKINGRANK);
+	CRankingLogo2::Create(D3DXVECTOR3(430.0f, 450.0f, 0.0f), 100.0, 250.0f, CResource::TEXTURE_RANKINGRANK);
 
 	return S_OK;
 }
