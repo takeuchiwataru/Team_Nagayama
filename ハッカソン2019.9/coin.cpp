@@ -169,93 +169,93 @@ void CCoin::Draw(void)
 	// 頂点法線の自動正規化	終了
 	pDevice->SetRenderState(D3DRS_NORMALIZENORMALS, FALSE);
 
-	D3DXMATRIX mtxRot, mtxTrans;				// 計算用マトリックス
-	D3DMATERIAL9 matDef;						// 現在のマテリアル保存用
-	D3DXMATERIAL *pMat;					// マテリアルデータへのポインタ
+	//D3DXMATRIX mtxRot, mtxTrans;				// 計算用マトリックス
+	//D3DMATERIAL9 matDef;						// 現在のマテリアル保存用
+	//D3DXMATERIAL *pMat;					// マテリアルデータへのポインタ
 
-										// ワールドマトリックスの初期化
-	D3DXMatrixIdentity(&m_mtxWorld);
+	//									// ワールドマトリックスの初期化
+	//D3DXMatrixIdentity(&m_mtxWorld);
 
-	// 回転を反映
-	D3DXMatrixRotationYawPitchRoll(&mtxRot, m_rot.y, m_rot.x, m_rot.z);
-	D3DXMatrixMultiply(&m_mtxWorld, &m_mtxWorld, &mtxRot);
+	//// 回転を反映
+	//D3DXMatrixRotationYawPitchRoll(&mtxRot, m_rot.y, m_rot.x, m_rot.z);
+	//D3DXMatrixMultiply(&m_mtxWorld, &m_mtxWorld, &mtxRot);
 
-	// 移動を反映
-	D3DXMatrixTranslation(&mtxTrans, m_pos.x, m_pos.y, m_pos.z);
-	D3DXMatrixMultiply(&m_mtxWorld, &m_mtxWorld, &mtxTrans);
+	//// 移動を反映
+	//D3DXMatrixTranslation(&mtxTrans, m_pos.x, m_pos.y, m_pos.z);
+	//D3DXMatrixMultiply(&m_mtxWorld, &m_mtxWorld, &mtxTrans);
 
-	//================================================================
-	// 影の設定
-	//================================================================
-	D3DXMATRIX mtxShadow;		// シャドウマトリックス
-	D3DXPLANE planeField;
-	D3DXVECTOR4 vecLight;
-	D3DXVECTOR3 pos, normal;
+	////================================================================
+	//// 影の設定
+	////================================================================
+	//D3DXMATRIX mtxShadow;		// シャドウマトリックス
+	//D3DXPLANE planeField;
+	//D3DXVECTOR4 vecLight;
+	//D3DXVECTOR3 pos, normal;
 
-	// ライトを無効にする
-	pDevice->LightEnable(0, FALSE);
-	pDevice->LightEnable(1, FALSE);
-	pDevice->LightEnable(2, FALSE);
-	pDevice->SetRenderState(D3DRS_LIGHTING, FALSE);
+	//// ライトを無効にする
+	//pDevice->LightEnable(0, FALSE);
+	//pDevice->LightEnable(1, FALSE);
+	//pDevice->LightEnable(2, FALSE);
+	//pDevice->SetRenderState(D3DRS_LIGHTING, FALSE);
 
-	// シャドウマトリックスの初期化
-	D3DXMatrixIdentity(&mtxShadow);
+	//// シャドウマトリックスの初期化
+	//D3DXMatrixIdentity(&mtxShadow);
 
-	pDevice->SetRenderState(D3DRS_BLENDOP, D3DBLENDOP_REVSUBTRACT);
-	pDevice->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
-	pDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_ONE);
+	//pDevice->SetRenderState(D3DRS_BLENDOP, D3DBLENDOP_REVSUBTRACT);
+	//pDevice->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
+	//pDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_ONE);
 
-	// ライトの方向の設定
-	vecLight = D3DXVECTOR4(-CLight::GetLight(0).Direction.x, -CLight::GetLight(0).Direction.y, -CLight::GetLight(0).Direction.z, 0.0f);
+	//// ライトの方向の設定
+	//vecLight = D3DXVECTOR4(-CLight::GetLight(0).Direction.x, -CLight::GetLight(0).Direction.y, -CLight::GetLight(0).Direction.z, 0.0f);
 
-	// 位置を設定
-	pos = D3DXVECTOR3(0.0f, 0.6f, 0.0f);
+	//// 位置を設定
+	//pos = D3DXVECTOR3(0.0f, 0.6f, 0.0f);
 
-	// 地面の法線を設定
-	normal = D3DXVECTOR3(0.0f, 1.0f, 0.0f);
+	//// 地面の法線を設定
+	//normal = D3DXVECTOR3(0.0f, 1.0f, 0.0f);
 
-	// 位置と法線を掛け合わせて面を作る
-	D3DXPlaneFromPointNormal(&planeField, &pos, &normal);
+	//// 位置と法線を掛け合わせて面を作る
+	//D3DXPlaneFromPointNormal(&planeField, &pos, &normal);
 
-	// ライトの方向と面でシャドウマトリックスを設定
-	D3DXMatrixShadow(&mtxShadow, &vecLight, &planeField);
+	//// ライトの方向と面でシャドウマトリックスを設定
+	//D3DXMatrixShadow(&mtxShadow, &vecLight, &planeField);
 
-	// ワールドマトリックスと掛け合わせる
-	D3DXMatrixMultiply(&mtxShadow, &m_mtxWorld, &mtxShadow);
+	//// ワールドマトリックスと掛け合わせる
+	//D3DXMatrixMultiply(&mtxShadow, &m_mtxWorld, &mtxShadow);
 
-	// シャドウマトリックスの設定
-	pDevice->SetTransform(D3DTS_WORLD, &mtxShadow);
+	//// シャドウマトリックスの設定
+	//pDevice->SetTransform(D3DTS_WORLD, &mtxShadow);
 
-	// 現在のマテリアルを取得
-	pDevice->GetMaterial(&matDef);
+	//// 現在のマテリアルを取得
+	//pDevice->GetMaterial(&matDef);
 
-	// マテリアルデータへのポインタを取得
-	pMat = (D3DXMATERIAL*)CResource::GetBuffMat(CResource::MODEL_COIN)->GetBufferPointer();
+	//// マテリアルデータへのポインタを取得
+	//pMat = (D3DXMATERIAL*)CResource::GetBuffMat(CResource::MODEL_COIN)->GetBufferPointer();
 
-	for (int nCntMat = 0; nCntMat < (int)CResource::GetNumMat(CResource::MODEL_COIN); nCntMat++)
-	{
-		// マテリアルの設定
-		pDevice->SetMaterial(&pMat[nCntMat].MatD3D);
+	//for (int nCntMat = 0; nCntMat < (int)CResource::GetNumMat(CResource::MODEL_COIN); nCntMat++)
+	//{
+	//	// マテリアルの設定
+	//	pDevice->SetMaterial(&pMat[nCntMat].MatD3D);
 
-		//テクスチャの設定
-		pDevice->SetTexture(0, NULL);
+	//	//テクスチャの設定
+	//	pDevice->SetTexture(0, NULL);
 
-		// モデル(パーツ)の描画
-		CResource::GetMesh(CResource::MODEL_COIN)->DrawSubset(nCntMat);
-	}
+	//	// モデル(パーツ)の描画
+	//	CResource::GetMesh(CResource::MODEL_COIN)->DrawSubset(nCntMat);
+	//}
 
-	// マテリアルをデフォルトに戻す
-	pDevice->SetMaterial(&matDef);
-	// ライトを有効にする
-	pDevice->LightEnable(0, TRUE);
-	pDevice->LightEnable(1, TRUE);
-	pDevice->LightEnable(2, TRUE);
-	pDevice->SetRenderState(D3DRS_LIGHTING, TRUE);
+	//// マテリアルをデフォルトに戻す
+	//pDevice->SetMaterial(&matDef);
+	//// ライトを有効にする
+	//pDevice->LightEnable(0, TRUE);
+	//pDevice->LightEnable(1, TRUE);
+	//pDevice->LightEnable(2, TRUE);
+	//pDevice->SetRenderState(D3DRS_LIGHTING, TRUE);
 
-	//レンダーステイトを元に戻す
-	pDevice->SetRenderState(D3DRS_BLENDOP, D3DBLENDOP_ADD);
-	pDevice->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
-	pDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
+	////レンダーステイトを元に戻す
+	//pDevice->SetRenderState(D3DRS_BLENDOP, D3DBLENDOP_ADD);
+	//pDevice->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
+	//pDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
 }
 
 //=============================================================================

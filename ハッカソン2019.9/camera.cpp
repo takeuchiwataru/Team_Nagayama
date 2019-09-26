@@ -92,9 +92,14 @@ void CCamera::Update(void)
 	CManager::MODE mode;
 	mode = CManager::GetMode();
 
+	/*CPlayer *pPlayer;
+	mode = CManager::GetMode();*/
+
 	if (mode == CManager::MODE_GAME || mode == CManager::MODE_TUTORIAL)
 	{
 		PlayerCamera();
+
+		/*if()*/
 	}
 
 	if (mode == CManager::MODE_TITLE)

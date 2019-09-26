@@ -60,6 +60,7 @@ public:
 		TEXTURE_HEALTH,			// 体力
 		TEXTURE_TITLELOGO,		// タイトルロゴ 竹内追加
 		TEXTURE_TUTORIALLOGO,	// チュートリアルロゴ 竹内追加
+		TEXTURE_ONARAREMAIN,	// おなら残機 竹内追加
 		TEXTURE_HE,				// 屁
 	} TEXTURE;
 

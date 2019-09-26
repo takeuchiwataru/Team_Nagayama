@@ -19,6 +19,7 @@ class CScore;
 class CNumBlock;
 class CLife;
 class CHealth;
+class COnaraRemain;
 
 //=============================================================================
 // マクロ定義
@@ -47,6 +48,7 @@ public:
 	static CLife *GetLife(void);
 	static CPlayer *GetPlayer(void) { return m_pPlayer; }
 	static CHealth *GetHealth(void) { return m_pHealth; }
+	static COnaraRemain *GetOnaraRemain(void);
 
 	void LoadCoin(void);				// コインの読み込み
 	void LoadMat(void);					// マテリアルの読み込み
@@ -59,6 +61,7 @@ private:
 	static CNumBlock *m_pNumBlock;
 	static CLife *m_pLife;
 	static CHealth *m_pHealth;
+	static COnaraRemain *m_pOnaraRemain;
 	static CPlayer *m_pPlayer;
 };
 
