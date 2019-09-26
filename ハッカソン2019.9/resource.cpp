@@ -56,6 +56,8 @@ const char *CResource::m_apTexFilename[] =
 	"data/TEXTURE/number_02.png",			// スコアのテクスチャ名
 	"data/TEXTURE/bullet000.png",				// 弾のテクスチャ名
 	"data\\TEXTURE\\life000.png",			// 体力のモデル名
+	"data\\TEXTURE\\TITLE\\title001.png",	// タイトルロゴ名
+
 };
 
 //=============================================================================

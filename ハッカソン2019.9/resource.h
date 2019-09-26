@@ -58,6 +58,7 @@ public:
 		TEXTURE_NUMBER,			// 数字
 		TEXTURE_BULLET,			// 弾
 		TEXTURE_HEALTH,			// 体力
+		TEXTURE_TITLELOGO,		// タイトルロゴ 竹内追加
 	} TEXTURE;
 
 	CResource();		// コンストラクタ
