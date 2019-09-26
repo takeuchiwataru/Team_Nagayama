@@ -65,6 +65,8 @@ public:
 		TEXTURE_HE,				// 屁
 		TEXTURE_CLEAR,				// 屁
 		TEXTURE_OVER,				// 屁
+		TEXTURE_RANKINGLOGO,	// ランキングロゴ竹内追加
+		TEXTURE_RANKINGRANK,	// ランキングランク
 	} TEXTURE;
 
 	CResource();		// コンストラクタ
