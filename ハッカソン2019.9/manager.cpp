@@ -75,7 +75,7 @@ HRESULT CManager::Init(HINSTANCE hInstance, HWND hWnd, bool bWindow)
 {
 	// ç≈èâÇÃâÊñ 
 	//m_mode = MODE_GAMEOVER;
-	m_mode = MODE_TITLE;
+	m_mode = MODE_GAME;
 	//m_mode = MODE_GAME;
 	//m_mode = MODE_RANKING;;
 

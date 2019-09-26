@@ -171,6 +171,7 @@
     <ClCompile Include="meshField.cpp" />
     <ClCompile Include="model.cpp" />
     <ClCompile Include="number.cpp" />
+    <ClCompile Include="onararemain.cpp" />
     <ClCompile Include="particle2D.cpp" />
     <ClCompile Include="particle3D.cpp" />
     <ClCompile Include="particleX.cpp" />
@@ -218,6 +219,7 @@
     <ClInclude Include="meshField.h" />
     <ClInclude Include="model.h" />
     <ClInclude Include="number.h" />
+    <ClInclude Include="onararemain.h" />
     <ClInclude Include="particle2D.h" />
     <ClInclude Include="particle3D.h" />
     <ClInclude Include="particleX.h" />
