@@ -147,6 +147,7 @@ CPlayer::CPlayer() : CScene(PLAYER_PRIORITY)
 	m_nBulletTimer = 0;
 	m_nDisTimer = 0;
 	m_nOnaraRemain = 0;
+	m_nCount = 0;
 }
 
 //=============================================================================
@@ -216,6 +217,7 @@ HRESULT CPlayer::Init(void)
 	m_nBulletTimer = 0;
 	m_nDisTimer = 0;
 	m_nOnaraRemain = ONARAREMAIN;
+	m_nCount = 3;
 
 	// ブロックの位置を保存
 	m_BlockPos = D3DXVECTOR3((sinf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.x, m_pos.y, (cosf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.z);
@@ -277,7 +279,7 @@ void CPlayer::Update(void)
 
 	Health();
 
-	OnaraRemain();
+	//OnaraRemain();
 
 	// モーション
 	UpdateMotion();
@@ -463,9 +465,9 @@ void CPlayer::Move(void)
 	else if (pInputKeyboard->GetPress(DIK_D) == true)
 	{
 		//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-			m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
-			m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
-			m_fDestAngle = (cameraRot.y - D3DX_PI * 0.5f);
+		m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
+		m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
+		m_fDestAngle = (cameraRot.y - D3DX_PI * 0.5f);
 	}
 	/*if (pInputKeyboard->GetPress(DIK_W) == true || pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_A) == true)
 	{
@@ -500,22 +502,40 @@ void CPlayer::Move(void)
 		m_rot.y += D3DX_PI* 2.0f;
 	}
 
-	if (pInputKeyboard->GetTrigger(DIK_W) == true || pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_A) == true)
+	if (m_nOnaraRemain < 3)
 	{
-		m_move.y = 0.0f;
+		if (pInputKeyboard->GetTrigger(DIK_W) == true || pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_A) == true)
+		{
+			m_move.y = 0.0f;
 
-		pSound->PlaySound(CSound::SOUND_LABEL_SE_JUMP);
+			pSound->PlaySound(CSound::SOUND_LABEL_SE_JUMP);
 
-		// プレイヤーをジャンプ状態
-		m_bJump = true;
-		// ジャンプ力
-		m_move.y -= (cosf(D3DX_PI * 1.0f) * JUMP);
-		// キーとフレームを0にする
-		m_nKey = 0;
-		m_nCountMotion = 0;
+			// プレイヤーをジャンプ状態
+			m_bJump = true;
 
-		CBAnimation::Create(D3DXVECTOR3(m_pos.x, m_pos.y - 80.0f, m_pos.z), D3DXCOLOR(1.0f, 0.8f, 0.0f, 1.0f), 50.0f, 50.0f, (1.0f / 6.0f), 1.0f, 1.0f, 6, 1, 0, 0, CResource::TEXTURE_HE);
+			// ジャンプ力
+			m_move.y -= (cosf(D3DX_PI * 1.0f) * JUMP);
+			// キーとフレームを0にする
+			m_nKey = 0;
+			m_nCountMotion = 0;
+
+			CBAnimation::Create(D3DXVECTOR3(m_pos.x, m_pos.y - 80.0f, m_pos.z), D3DXCOLOR(1.0f, 0.8f, 0.0f, 1.0f), 50.0f, 50.0f, (1.0f / 6.0f), 1.0f, 1.0f, 6, 1, 0, 0, CResource::TEXTURE_HE);
+
+			// おなら残機取得
+			COnaraRemain *pOnaraRemain = NULL;
+
+			pOnaraRemain = CGame::GetOnaraRemain();
+
+			if (m_nOnaraRemain > 0)
+			{
+				m_nOnaraRemain--;
+
+				pOnaraRemain->AddOnaraRemain(-1);
+
+			}
+		}
 	}
+
 
 	if (m_move.x < PLAYER_WALK && m_move.x > -PLAYER_WALK && m_move.z < PLAYER_WALK && m_move.z > -PLAYER_WALK && m_bJump == false && m_State != STATE_BLOCK && m_State != STATE_BREAK && m_State != STATE_UPBREAK && m_State != STATE_LAND)
 	{
@@ -1612,31 +1632,33 @@ void CPlayer::OnaraRemain(void)
 	CManager::MODE mode;
 	mode = CManager::GetMode();
 
-	// おなら残機取得
-	COnaraRemain *pOnaraRemain = NULL;
+	//// おなら残機取得
+	//COnaraRemain *pOnaraRemain = NULL;
 
-	if (mode == CManager::MODE_GAME)
-	{
-		pOnaraRemain = CGame::GetOnaraRemain();
+	//if (mode == CManager::MODE_GAME)
+	//{
+	//	pOnaraRemain = CGame::GetOnaraRemain();
 
-	}
+	//}
 
-	if (mode == CManager::MODE_GAME)
-	{
-		if (pInputKeyboard->GetTrigger(DIK_W) == true)
-		{// Wを押したらおなら残機を減らす
+	//if (mode == CManager::MODE_GAME)
+	//{
+	//	if (pInputKeyboard->GetTrigger(DIK_W) == true)
+	//	{// Wを押したらおなら残機を減らす
 
-			if (m_nOnaraRemain > 0)
-			{
-				m_nOnaraRemain--;
+	//		if (m_nOnaraRemain > 0)
+	//		{
+	//			m_nOnaraRemain--;
 
-				pOnaraRemain->AddOnaraRemain(-1);
-			}
-		}
+	//			pOnaraRemain->AddOnaraRemain(-1);
 
-
-	
-	}
+	//			if (m_nOnaraRemain == 0)
+	//			{
+	//				m_bJump = false;
+	//			}	
+	//		}
+	//	}
+	//}
 }
 
 	//if (mode == CManager::MODE_TUTORIAL)
