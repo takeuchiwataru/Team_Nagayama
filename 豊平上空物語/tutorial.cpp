@@ -141,18 +141,11 @@ void CTutorial::Update(void)
 	// フェード取得
 	CFade *pFade = CManager::GetFade();
 
-	if (CPlayer::GetGoal() == true)
-	{// ゴールしたら
-		if (CFade::GetFade() == CFade::FADE_NONE)
-		{// ゲームに遷移
-			pFade->SetFade(CManager::MODE_GAME, CFade::FADE_OUT);
-		}
-	}
-	else if (CPlayer::GetGameOver() == true)
+	if (pInputKeyboard->GetTrigger(DIK_RETURN) == true)
 	{
 		if (CFade::GetFade() == CFade::FADE_NONE)
-		{// ゲームオーバーに遷移
-			pFade->SetFade(CManager::MODE_TUTORIAL, CFade::FADE_OUT);
+		{
+			pFade->SetFade(CManager::MODE_GAME, CFade::FADE_OUT);
 		}
 	}
 
