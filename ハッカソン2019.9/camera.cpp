@@ -67,6 +67,15 @@ void CCamera::Init(void)
 	m_DiffAngle = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 	m_fLength = sqrtf((m_posV.x - m_posR.x) * (m_posV.x - m_posR.x) + (m_posV.z - m_posR.z) * (m_posV.z - m_posR.z));
 	m_nGemTimer = 0;
+
+	CManager::MODE mode;
+	mode = CManager::GetMode();
+
+	if (mode == CManager::MODE_GAME)
+	{
+		m_posV = D3DXVECTOR3(0.0f, 70100.0f, -220.0f);	// éãì_
+		m_posR = D3DXVECTOR3(0.0f, 70050.0f, 0.0f);		// íçéãì_
+	}
 }
 
 //=============================================================================
@@ -106,6 +115,7 @@ void CCamera::Update(void)
 	}
 #ifdef _DEBUG
 	CDebugProc::Print("cfccfccfc", "posV     : x", m_posV.x, "f", "   y", m_posV.y, "f", " z", m_posV.z, "f");
+	CDebugProc::Print("cfccfccfc", "posR     : x", m_posR.x, "f", "   y", m_posR.y, "f", " z", m_posR.z, "f");
 #endif
 }
 

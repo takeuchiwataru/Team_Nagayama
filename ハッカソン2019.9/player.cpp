@@ -264,6 +264,7 @@ void CPlayer::Uninit(void)
 //=============================================================================
 void CPlayer::Update(void)
 {
+#if(0)
 	// プレイヤーの動き
 	Move();
 
@@ -274,6 +275,7 @@ void CPlayer::Update(void)
 	Life();
 
 	Health();
+#endif
 
 	// モーション
 	UpdateMotion();

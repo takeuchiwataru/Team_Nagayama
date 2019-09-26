@@ -14,7 +14,7 @@
 #include "debugProc.h"
 #include "player.h"
 #include "scene.h"
-//#include "meshField.h"
+#include "camera.h"
 #include "meshCylinder.h"
 #include "fade.h"
 #include "goal.h"
@@ -103,6 +103,12 @@ HRESULT CGame::Init(void)
 
 	// コイン生成
 	LoadCoin();
+
+	// カメラ取得
+	CCamera *pCamera;
+	pCamera = CManager::GetCamera();
+
+	pCamera->Init();
 
 	// プレイヤーの生成
 	CPlayer::Create(D3DXVECTOR3(80.0f, 70000.0f, 250.0f));
