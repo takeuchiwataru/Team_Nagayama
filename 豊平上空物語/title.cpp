@@ -97,7 +97,7 @@ HRESULT CTitle::Init()
 	CPressAnyButton::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, 650.0f, 0.0f), 200.0f, 170.0f, CResource::TEXTURE_ANYBUTTON);
 
 	// タイトルロゴの生成
-	CTitleLogo::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, 200.0f, 0.0f), 300.0f, 200.0f, CResource::TEXTURE_TITLELOGO);
+	CTitleLogo::Create(D3DXVECTOR3(SCREEN_WIDTH / 2 + 350.0f, 320.0f, 0.0f), 200.0f, 300.0f, CResource::TEXTURE_TITLELOGO);
 
 	// メッシュシリンダーの生成
 	CMeshCylinder::Create(D3DXVECTOR3(700.0f, 1700.0f, 0.0f), 1500.0, 30.0f);
