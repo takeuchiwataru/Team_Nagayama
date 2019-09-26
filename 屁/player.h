@@ -175,10 +175,11 @@ private:
 	int						m_nLife;					// 残機
 	D3DXVECTOR3				m_aVtxMin[MAX_PLAYER], m_aVtxMax[MAX_PLAYER];			// プレイヤーの最小値、最大値
 	int						m_nOnaraRemain;	// おなら残機
-
+	bool					m_bOnara;
 	KEY_INFO *m_pKeyInfo;								// キー情報へのポインタ
 	int m_nKey;											// 現在のキーナンバー
 	int m_nCountMotion;									// モーションカウンター
 	MOTION_INFO m_aMotionInfo[STATE_MAX];
+	int m_nCount;									// 回数制限
 };
 #endif
