@@ -101,9 +101,6 @@ HRESULT CGame::Init(void)
 {
 	LoadMat();
 
-	// コイン生成
-	LoadCoin();
-
 	// カメラ取得
 	CCamera *pCamera;
 	pCamera = CManager::GetCamera();
@@ -111,7 +108,8 @@ HRESULT CGame::Init(void)
 	pCamera->Init();
 
 	// プレイヤーの生成
-	CPlayer::Create(D3DXVECTOR3(80.0f, 70000.0f, 250.0f));
+	CPlayer::Create(D3DXVECTOR3(0.0f, 70000.0f, 250.0f));
+	//CPlayer::Create(D3DXVECTOR3(80.0f, 50.0f, 250.0f));
 
 	BlockCreate();
 	FieldCreate();
@@ -452,4 +450,13 @@ void CGame::FieldCreate()
 
 	// 穴
 	CScene3D::Create(D3DXVECTOR3(550.0f, 0.0f, 700.0f), 700.0f, 700.0f, 1.0f, 1.0f);
+
+	// コイン生成
+	CCoin::Create(D3DXVECTOR3(0.0f, 68500.0f, 250.0f));
+	CCoin::Create(D3DXVECTOR3(0.0f, 68000.0f, 250.0f));
+	CCoin::Create(D3DXVECTOR3(0.0f, 67500.0f, 250.0f));
+
+	CCoin::Create(D3DXVECTOR3(-200.0f, 65000.0f, 250.0f));
+	CCoin::Create(D3DXVECTOR3(-200.0f, 64500.0f, 250.0f));
+	CCoin::Create(D3DXVECTOR3(-200.0f, 64000.0f, 250.0f));
 }

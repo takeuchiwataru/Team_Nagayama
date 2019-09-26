@@ -161,7 +161,7 @@ void CCoin::Draw(void)
 	D3DMATERIAL9 matDef;						// 現在のマテリアル保存用
 	D3DXMATERIAL *pMat;					// マテリアルデータへのポインタ
 
-	// ワールドマトリックスの初期化
+										// ワールドマトリックスの初期化
 	D3DXMatrixIdentity(&m_mtxWorld);
 
 	// 回転を反映

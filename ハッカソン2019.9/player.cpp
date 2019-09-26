@@ -264,7 +264,6 @@ void CPlayer::Uninit(void)
 //=============================================================================
 void CPlayer::Update(void)
 {
-#if(0)
 	// プレイヤーの動き
 	Move();
 
@@ -275,7 +274,7 @@ void CPlayer::Update(void)
 	Life();
 
 	Health();
-#endif
+
 
 	// モーション
 	UpdateMotion();
@@ -465,6 +464,14 @@ void CPlayer::Move(void)
 			m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
 			m_fDestAngle = (cameraRot.y - D3DX_PI * 0.5f);
 	}
+	if (pInputKeyboard->GetPress(DIK_W) == true || pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_A) == true)
+	{
+		m_pos.y += 20.0f;
+	}
+	if (pInputKeyboard->GetPress(DIK_S) == true || pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_A) == true)
+	{
+		m_pos.y -= 20.0f;
+	}
 
 	//向きの慣性
 	m_fDiffAngle = m_fDestAngle - m_rot.y;
@@ -490,20 +497,20 @@ void CPlayer::Move(void)
 		m_rot.y += D3DX_PI* 2.0f;
 	}
 
-	if (pInputKeyboard->GetTrigger(DIK_W) == true || pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_A) == true)
-	{
-		m_move.y = 0.0f;
+	//if (pInputKeyboard->GetTrigger(DIK_W) == true || pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_A) == true)
+	//{
+	//	m_move.y = 0.0f;
 
-		pSound->PlaySound(CSound::SOUND_LABEL_SE_JUMP);
+	//	pSound->PlaySound(CSound::SOUND_LABEL_SE_JUMP);
 
-		// プレイヤーをジャンプ状態
-		m_bJump = true;
-		// ジャンプ力
-		m_move.y -= (cosf(D3DX_PI * 1.0f) * JUMP);
-		// キーとフレームを0にする
-		m_nKey = 0;
-		m_nCountMotion = 0;
-	}
+	//	// プレイヤーをジャンプ状態
+	//	m_bJump = true;
+	//	// ジャンプ力
+	//	m_move.y -= (cosf(D3DX_PI * 1.0f) * JUMP);
+	//	// キーとフレームを0にする
+	//	m_nKey = 0;
+	//	m_nCountMotion = 0;
+	//}
 
 	if (m_move.x < PLAYER_WALK && m_move.x > -PLAYER_WALK && m_move.z < PLAYER_WALK && m_move.z > -PLAYER_WALK && m_bJump == false && m_State != STATE_BLOCK && m_State != STATE_BREAK && m_State != STATE_UPBREAK && m_State != STATE_LAND)
 	{
@@ -545,11 +552,13 @@ void CPlayer::Move(void)
 	m_move.x += (0.0f - m_move.x) * MOVE_INERTIA;
 	m_move.z += (0.0f - m_move.z) * MOVE_INERTIA;
 
+#if(0)
 	// 重力加算
-	if (m_move.y > -30.0f)
+	if (m_move.y > -15.0f)
 	{
 		m_move.y -= cosf(D3DX_PI * 0.0f) * GRAVITY;
 	}
+#endif
 }
 
 //=============================================================================
