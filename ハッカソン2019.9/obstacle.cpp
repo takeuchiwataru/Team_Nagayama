@@ -15,6 +15,7 @@
 #include "tutorial.h"
 #include "shadow.h"
 #include "light.h"
+#include "input.h"
 
 //*****************************************************************************
 // マクロ定義
@@ -80,6 +81,7 @@ HRESULT CObstacle::Init(void)
 	// オブジェクトの種類の設定
 	SetObjType(CScene::OBJTYPE_BULLET);
 
+	CSceneX::SetPosition(m_pos);
 	CSceneX::Init();
 
 	m_move = D3DXVECTOR3(0.0f, 0.0f, 0.0f);	// 移動量
@@ -105,6 +107,28 @@ void CObstacle::Uninit(void)
 //=============================================================================
 void CObstacle::Update(void)
 {
+	// 入力情報を取得
+	CInputKeyboard *pInputKeyboard;
+	pInputKeyboard = CManager::GetInputKeyboard();
+
+	CPlayer *pPlayer = NULL;
+	pPlayer = CGame::GetPlayer();
+
+	// 位置を取得
+	m_pos = CSceneX::GetPosition();
+
+	if (pPlayer->GetMove().y >= 0.0f)
+	{
+		m_pos.y -= 0.0f;
+	}
+	else if (pPlayer->GetMove().y < -15.0f)
+	{
+		m_pos.y += pPlayer->GetMove().y + 10.0f;
+	}
+
+
+	SetPosition(m_pos);
+
 #ifdef _DEBUG
 	//CDebugProc::Print("cfccfccfc", "BulletPos : x", pos.x, "f", "   y", pos.y, "f", "  z", pos.z, "f");
 #endif

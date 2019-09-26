@@ -157,10 +157,10 @@ void CBAnimation::Update(void)
 			Uninit();
 		}
 
-		if (m_nTypePlayer == 0)
+		/*if (m_nTypePlayer == 0)
 		{
 			CBillboard::SetPosition(D3DXVECTOR3(pos.x + 0.0f, pos.y, pos.z - 15.0f));
-		}
+		}*/
 
 		//テクスチャの破棄フラグ
 		m_bDestroy = false;

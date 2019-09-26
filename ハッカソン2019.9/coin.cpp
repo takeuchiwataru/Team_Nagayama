@@ -105,6 +105,9 @@ void CCoin::Update(void)
 	CInputKeyboard *pInputKeyboard;
 	pInputKeyboard = CManager::GetInputKeyboard();
 
+	CPlayer *pPlayer = NULL;
+	pPlayer = CGame::GetPlayer();
+
 	// ƒQ[ƒ€‚Ìƒ‚[ƒh‚ğæ“¾
 	CManager::MODE mode;
 	mode = CManager::GetMode();
@@ -121,6 +124,15 @@ void CCoin::Update(void)
 	if (m_rot.y < -D3DX_PI)
 	{
 		m_rot.y += D3DX_PI * 2.0f;
+	}
+
+	if (pPlayer->GetMove().y >= 0.0f)
+	{
+		m_pos.y -= 0.0f;
+	}
+	else if (pPlayer->GetMove().y < -15.0f)
+	{
+		m_pos.y += pPlayer->GetMove().y + 10.0f;
 	}
 	
 	SetRot(m_rot);

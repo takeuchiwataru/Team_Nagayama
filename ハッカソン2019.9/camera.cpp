@@ -72,8 +72,8 @@ void CCamera::Init(void)
 	mode = CManager::GetMode();
 
 
-	m_posV = D3DXVECTOR3(0.0f, 70100.0f, -400.0f);	// 視点
-	m_posR = D3DXVECTOR3(0.0f, 70050.0f, 0.0f);		// 注視点
+	m_posV = D3DXVECTOR3(0.0f, 70000.0f, -400.0f);	// 視点
+	m_posR = D3DXVECTOR3(0.0f, 69950.0f, 0.0f);		// 注視点
 
 }
 
@@ -211,90 +211,6 @@ void CCamera::PlayerCamera(void)
 			{// オブジェクトの種類を確かめる
 			 // デバック用
 #if 0
-				if (pInputKeyboard->GetPress(DIK_UP) == true)
-				{// 前方向に移動
-					m_posV.y += 3.0f;
-
-					m_posR.y += 3.0f;
-				}
-				if (pInputKeyboard->GetPress(DIK_DOWN) == true)
-				{// 手前方向に移動
-					m_posV.y -= 3.0f;
-
-					m_posR.y -= 3.0f;
-				}
-
-				// 注視点回転
-				if (pInputKeyboard->GetPress(DIK_Q) == true)
-				{// 左方向に回転
-					m_rot.y -= 0.03f;
-
-					if (m_rot.y < -D3DX_PI)
-					{
-						m_rot.y += D3DX_PI * 2.0f;
-					}
-
-					m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
-					m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
-				}
-				else if (pInputKeyboard->GetPress(DIK_E) == true)
-				{// 左方向に回転
-					m_rot.y += 0.03f;
-
-					if (m_rot.y > D3DX_PI)
-					{
-						m_rot.y -= D3DX_PI * 2.0f;
-					}
-
-					m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
-					m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
-				}
-				else if (pInputKeyboard->GetPress(DIK_T) == true)
-				{// 上
-					m_rot.x += 3.0f;
-
-					m_posR.y = m_rot.x;
-				}
-				else if (pInputKeyboard->GetPress(DIK_B) == true)
-				{// 下
-					m_rot.x -= 3.0f;
-
-					m_posR.y = m_rot.x;
-				}
-
-				// 視点回転
-				if (pInputKeyboard->GetPress(DIK_Z) == true)
-				{// 左方向に回転
-					m_rot.y -= 0.03f;
-
-					if (m_rot.y < -D3DX_PI)
-					{
-						m_rot.y += D3DX_PI * 2.0f;
-					}
-
-					m_posV.x = m_posR.x + sinf(D3DX_PI + m_rot.y) * m_fLength;
-					m_posV.z = m_posR.z + cosf(D3DX_PI + m_rot.y) * m_fLength;
-				}
-				else if (pInputKeyboard->GetPress(DIK_C) == true)
-				{// 左方向に回転
-					m_rot.y += 0.03f;
-
-					if (m_rot.y > D3DX_PI)
-					{
-						m_rot.y -= D3DX_PI * 2.0f;
-					}
-
-					m_posV.x = m_posR.x + sinf(D3DX_PI + m_rot.y) * m_fLength;
-					m_posV.z = m_posR.z + cosf(D3DX_PI + m_rot.y) * m_fLength;
-				}
-				else if (pInputKeyboard->GetPress(DIK_Y) == true)
-				{// 上
-					m_posV.y += 3.0f;
-				}
-				else if (pInputKeyboard->GetPress(DIK_N) == true)
-				{// 下
-					m_posV.y -= 3.0f;
-				}
 #endif
 #if 1
 				m_posRDest.y = (((CPlayer*)pScene)->GetPos().y + 50.0f) - sinf(((CPlayer*)pScene)->GetRot().x) * DEST_R_Y;

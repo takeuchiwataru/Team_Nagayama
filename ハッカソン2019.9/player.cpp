@@ -61,7 +61,7 @@ CShadow *CPlayer::m_pShadow = NULL;
 #define BLOCK_RANGE				(65.0f)									// プレイヤーとブロックの距離
 #define BLOCK_DECREASE			(30)
 #define LIFE					(3)										// 体力
-#define SCORE_COIN				(1500)									// コイン獲得時のスコア
+#define SCORE_COIN				(100)									// コイン獲得時のスコア
 #define SCORE_GEM				(10000)									// 宝石獲得時のスコア
 #define PLAYER_FALL				(150.0f)								// 落ちる判定
 #define PLAYER_WALK				(0.25f)									// 歩いてる速さの最低値
@@ -509,7 +509,7 @@ void CPlayer::Move(void)
 		m_nKey = 0;
 		m_nCountMotion = 0;
 
-		CBAnimation::Create(m_pos, D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f), 50.0f, 50.0f, (1.0f / 6.0f), 1.0f, 1.5f, 6, 1, 1, 1, CResource::TEXTURE_HE);
+		CBAnimation::Create(m_pos, D3DXCOLOR(1.0f, 0.8f, 0.0f, 1.0f), 50.0f, 50.0f, (1.0f / 6.0f), 1.0f, 1.0f, 6, 1, 0, 0, CResource::TEXTURE_HE);
 	}
 
 	if (m_move.x < PLAYER_WALK && m_move.x > -PLAYER_WALK && m_move.z < PLAYER_WALK && m_move.z > -PLAYER_WALK && m_bJump == false && m_State != STATE_BLOCK && m_State != STATE_BREAK && m_State != STATE_UPBREAK && m_State != STATE_LAND)
@@ -554,7 +554,7 @@ void CPlayer::Move(void)
 
 #if(1)
 	// 重力加算
-	if (m_move.y > -15.0f)
+	if (m_move.y > -30.0f)
 	{
 		m_move.y -= cosf(D3DX_PI * 0.0f) * GRAVITY;
 	}
@@ -1731,10 +1731,13 @@ void CPlayer::CollisonObstacle(D3DXVECTOR3 *pos, float fRadius)
 		{// 死亡フラグが立っていないもの
 			if (pScene->GetObjType() == CScene::OBJTYPE_BULLET)
 			{// オブジェクトの種類を確かめる
-				if (((CObstacle*)pScene)->CollisionPlayer(pos, fRadius) == true)
+				if (m_bBulletHit == false)
 				{
-					pHealth->CutHealth(CUT_LIFE);
-					m_bBulletHit = true;
+					if (((CObstacle*)pScene)->CollisionPlayer(pos, fRadius) == true)
+					{
+						pHealth->CutHealth(CUT_LIFE);
+						m_bBulletHit = true;
+					}
 				}
 			}
 		}
