@@ -503,7 +503,7 @@ void CPlayer::Move(void)
 		m_rot.y += D3DX_PI* 2.0f;
 	}
 
-	if (m_nOnaraRemain < 3)
+	if (m_nOnaraRemain ==  3 || m_nOnaraRemain == 2 || m_nOnaraRemain == 1)
 	{
 		if (pInputKeyboard->GetTrigger(DIK_W) == true || pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_A) == true)
 		{
