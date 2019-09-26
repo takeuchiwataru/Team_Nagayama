@@ -143,6 +143,11 @@ void CCamera::Update(void)
 		m_posV = D3DXVECTOR3(1010.0f, -330.0f, -2500.0f);	// 視点
 		m_posR = D3DXVECTOR3(1010.0f, -330.0f, -1000.0f);		// 注視点
 	}
+	if (mode == CManager::MODE_TUTORIAL)
+	{
+		m_posV = D3DXVECTOR3(1010.0f, -330.0f, -1600.0f);	// 視点
+		m_posR = D3DXVECTOR3(1010.0f, -330.0f, -100.0f);		// 注視点
+	}
 #ifdef _DEBUG
 	CDebugProc::Print("cfccfccfc", "posV     : x", m_posV.x, "f", "   y", m_posV.y, "f", " z", m_posV.z, "f");
 	CDebugProc::Print("cfccfccfc", "posR     : x", m_posR.x, "f", "   y", m_posR.y, "f", " z", m_posR.z, "f");
