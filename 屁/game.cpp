@@ -481,45 +481,45 @@ void CGame::FieldCreate()
 		CCoin::Create(D3DXVECTOR3(-200.0f, (65000.0f - (nCount * 500)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 20; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(0.0f, (63000.0f - (nCount * 500)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 19; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(200.0f, (55000.0f - (nCount * 500)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 20; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(200.0f, (45000.0f - (nCount * 500)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 21; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(200.0f, (35000.0f - (nCount * 500)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 18; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(200.0f, (25000.0f - (nCount * 500)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 20; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(200.0f, (15000.0f - (nCount * 500)), 250.0f));
 	}
 
 	//----------------------------------------------------------------------------
-	for (int nCount = 0; nCount < 20; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(400.0f, (65000.0f - (nCount * 200)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 20; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
-		CCoin::Create(D3DXVECTOR3(-400.0f, (63000.0f - (nCount * 400)), 250.0f));
+		CCoin::Create(D3DXVECTOR3(-300.0f, (63000.0f - (nCount * 400)), 250.0f));
 	}
 
 	for (int nCount = 0; nCount < 19; nCount++)
@@ -527,9 +527,9 @@ void CGame::FieldCreate()
 		CCoin::Create(D3DXVECTOR3(0.0f, (55000.0f - (nCount * 100)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 20; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
-		CCoin::Create(D3DXVECTOR3(400.0f, (45000.0f - (nCount * 500)), 250.0f));
+		CCoin::Create(D3DXVECTOR3(300.0f, (45000.0f - (nCount * 500)), 250.0f));
 	}
 
 	for (int nCount = 0; nCount < 21; nCount++)
@@ -542,7 +542,7 @@ void CGame::FieldCreate()
 		CCoin::Create(D3DXVECTOR3(200.0f, (25000.0f - (nCount * 100)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 20; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(-400.0f, (15000.0f - (nCount * 300)), 250.0f));
 	}
@@ -554,14 +554,14 @@ void CGame::FieldCreate()
 		CCoin::Create(D3DXVECTOR3(-200.0f, (52200.0f - (nCount * 300)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 20; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
-		CCoin::Create(D3DXVECTOR3(-200.0f, (45200.0f - (nCount * 500)), 250.0f));
+		CCoin::Create(D3DXVECTOR3(400.0f, (45200.0f - (nCount * 500)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 21; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
-		CCoin::Create(D3DXVECTOR3(-200.0f, (35200.0f - (nCount * 400)), 250.0f));
+		CCoin::Create(D3DXVECTOR3(200.0f, (35200.0f - (nCount * 400)), 250.0f));
 	}
 
 	for (int nCount = 0; nCount < 18; nCount++)
@@ -576,44 +576,44 @@ void CGame::FieldCreate()
 
 	//----------------------------------------------------------------------------
 
-	for (int nCount = 0; nCount < 19; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(200.0f, (52400.0f - (nCount * 500)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 20; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(-200.0f, (45400.0f - (nCount * 400)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 21; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(0.0f, (35400.0f - (nCount * 100)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 18; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(-400.0f, (25400.0f - (nCount * 300)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 20; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(0.0f, (15400.0f - (nCount * 500)), 250.0f));
 	}
 
 	//--------------------------------------------------------------------------
 
-	for (int nCount = 0; nCount < 19; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(400.0f, (52400.0f - (nCount * 300)), 250.0f));
 	}
 
 	for (int nCount = 0; nCount < 20; nCount++)
 	{
-		CCoin::Create(D3DXVECTOR3(0.0f, (45400.0f - (nCount * 500)), 250.0f));
+		CCoin::Create(D3DXVECTOR3(-200.0f, (45400.0f - (nCount * 500)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 21; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(400.0f, (35400.0f - (nCount * 200)), 250.0f));
 	}
@@ -623,7 +623,7 @@ void CGame::FieldCreate()
 		CCoin::Create(D3DXVECTOR3(-400.0f, (25400.0f - (nCount * 500)), 250.0f));
 	}
 
-	for (int nCount = 0; nCount < 20; nCount++)
+	for (int nCount = 0; nCount < 10; nCount++)
 	{
 		CCoin::Create(D3DXVECTOR3(0.0f, (15400.0f - (nCount * 200)), 250.0f));
 	}
@@ -794,13 +794,13 @@ void CGame::FieldCreate()
 	CObstacle::Create(D3DXVECTOR3(-350.0f, 8850.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
 	CObstacle::Create(D3DXVECTOR3(-300.0f, 8800.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
 
-
-	CObstacle::Create(D3DXVECTOR3(-400.0f, 5300.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
-	CObstacle::Create(D3DXVECTOR3(-200.0f, 5300.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
-	CObstacle::Create(D3DXVECTOR3(0.0f, 5300.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
-	CObstacle::Create(D3DXVECTOR3(200.0f, 5300.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
-	CObstacle::Create(D3DXVECTOR3(400.0f, 5300.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
-
+	//
+	CObstacle::Create(D3DXVECTOR3(-400.0f, 55300.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-200.0f, 55300.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(0.0f, 55300.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(200.0f, 55300.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(400.0f, 55300.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	//
 
 	CObstacle::Create(D3DXVECTOR3(100.0f, 64200.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
 
@@ -841,11 +841,20 @@ void CGame::FieldCreate()
 	CObstacle::Create(D3DXVECTOR3(-300.0f, 37800.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
 	CObstacle::Create(D3DXVECTOR3(300.0f, 37800.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
 
-	CObstacle::Create(D3DXVECTOR3(200.0f, 25700.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(200.0f, 45700.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
 
-	CObstacle::Create(D3DXVECTOR3(200.0f, 20200.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(200.0f, 40200.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
 
-	CObstacle::Create(D3DXVECTOR3(-200.0f, 18900.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-200.0f, 58900.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
 
-	CObstacle::Create(D3DXVECTOR3(-200.0f, 10200.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-200.0f, 40200.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(-50.0f, 59000.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-100.0f, 58900.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-150.0f, 58800.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-200.0f, 58700.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-250.0f, 58600.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-300.0f, 58500.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-350.0f, 58400.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	
 }
