@@ -63,6 +63,8 @@ public:
 		TEXTURE_TUTORIALLOGO,	// チュートリアルロゴ 竹内追加
 		TEXTURE_ONARAREMAIN,	// おなら残機 竹内追加
 		TEXTURE_HE,				// 屁
+		TEXTURE_CLEAR,				// 屁
+		TEXTURE_OVER,				// 屁
 	} TEXTURE;
 
 	CResource();		// コンストラクタ

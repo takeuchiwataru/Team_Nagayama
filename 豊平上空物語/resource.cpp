@@ -61,6 +61,8 @@ const char *CResource::m_apTexFilename[] =
 	"data\\TEXTURE\\soil.jpg",		// チュートリアルロゴ名
 	"data\\TEXTURE\\bullet000.png",	// おなら残機名
 	"data\\TEXTURE\\Animation_おなら.png",		// 屁のアニメーション
+	"data\\TEXTURE\\RESULT\\gameclear.png",		// 屁のアニメーション
+	"data\\TEXTURE\\RESULT\\gameover.png",		// 屁のアニメーション
 };
 
 //=============================================================================
