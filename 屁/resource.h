@@ -62,6 +62,8 @@ public:
 		TEXTURE_TUTORIALLOGO,	// チュートリアルロゴ 竹内追加
 		TEXTURE_ONARAREMAIN,	// おなら残機 竹内追加
 		TEXTURE_HE,				// 屁
+		TEXTURE_RANKINGLOGO,	// ランキングロゴ竹内追加
+		TEXTURE_RANKINGRANK,	// ランキングロゴ竹内追加
 	} TEXTURE;
 
 	CResource();		// コンストラクタ
