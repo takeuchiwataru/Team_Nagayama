@@ -96,7 +96,7 @@ HRESULT CTutorial::Init(void)
 	//}
 
 	//CreateSceneObj();
-	CTutorialLogo::Create(D3DXVECTOR3(0.0f, 0.0f, 0.0f), SCREEN_WIDTH, SCREEN_HEIGHT, CResource::TEXTURE_TUTORIALLOGO);
+	CTutorialLogo::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, SCREEN_HEIGHT/ 2, 0.0f), SCREEN_WIDTH / 2, SCREEN_HEIGHT /2, CResource::TEXTURE_TUTORIALLOGO);
 
 	CPressAnyButton::Create(D3DXVECTOR3(SCREEN_WIDTH / 2 + 500.0f, 650.0f, 0.0f), 150.0f, 100.0f, CResource::TEXTURE_ENTER);
 
