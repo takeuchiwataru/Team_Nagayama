@@ -58,9 +58,11 @@ const char *CResource::m_apTexFilename[] =
 	"data/TEXTURE/bullet000.png",				// 弾のテクスチャ名
 	"data\\TEXTURE\\life000.png",			// 体力のモデル名
 	"data\\TEXTURE\\TITLE\\title001.png",	// タイトルロゴ名
-	"data\\TEXTURE\\soil.jpg",		// チュートリアルロゴ名
+	"data\\TEXTURE\\tutorial.png",		// チュートリアルロゴ名
 	"data\\TEXTURE\\bullet000.png",	// おなら残機名
 	"data\\TEXTURE\\Animation_おなら.png",		// 屁のアニメーション
+	"data\\TEXTURE\\title001.png"			// ランキングロゴ
+	"data\\TEXTURE\\rankingrank.png"		// ランキングランク
 };
 
 //=============================================================================

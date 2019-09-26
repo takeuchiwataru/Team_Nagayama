@@ -157,6 +157,7 @@ void CGame::Uninit(void)
 	m_pNumBlock = NULL;
 	m_pHealth = NULL;
 	m_pPlayer = NULL;
+	m_pOnaraRemain = NULL;
 
 	// 全てのオブジェクトを解放
 	CScene::ReleseAll();
