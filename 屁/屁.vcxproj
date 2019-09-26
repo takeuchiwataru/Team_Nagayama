@@ -156,6 +156,7 @@
     <ClCompile Include="debugProc.cpp" />
     <ClCompile Include="fade.cpp" />
     <ClCompile Include="field.cpp" />
+    <ClCompile Include="fullMeguro.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameclear.cpp" />
     <ClCompile Include="gameover.cpp" />
@@ -206,6 +207,7 @@
     <ClInclude Include="debugProc.h" />
     <ClInclude Include="fade.h" />
     <ClInclude Include="field.h" />
+    <ClInclude Include="fullMeguro.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameclear.h" />
     <ClInclude Include="gameover.h" />
