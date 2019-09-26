@@ -25,6 +25,7 @@
 #include "text.h"
 #include "resource.h"
 #include "health.h"
+#include "tutoriallogo.h"
 
 //=============================================================================
 // 静的メンバ変数宣言
@@ -74,28 +75,33 @@ CTutorial::~CTutorial()
 //=============================================================================
 HRESULT CTutorial::Init(void)
 {
-	// テクスチャを読み込む
+	//// テクスチャを読み込む
 
-	// モデルを読み込む
-	// パーティクルのモデルのロード
-	CParticleX::LoadMat();
+	//// モデルを読み込む
+	//// パーティクルのモデルのロード
+	//CParticleX::LoadMat();
 
-	// プレイヤーの生成
-	CPlayer::Create(D3DXVECTOR3(0.0f, 50.0f, 220.0f));
+	//// プレイヤーの生成
+	//CPlayer::Create(D3DXVECTOR3(0.0f, 50.0f, 220.0f));
 
-	if (m_pScore == NULL)
-	{
-		// スコアの生成
-		m_pScore = CScore::Create(D3DXVECTOR3(800.0f, 70.0f, 0.0f), 37.0f, 60.0f);
-	}
+	//if (m_pScore == NULL)
+	//{
+	//	// スコアの生成
+	//	m_pScore = CScore::Create(D3DXVECTOR3(800.0f, 70.0f, 0.0f), 37.0f, 60.0f);
+	//}
 
-	if (m_pLife == NULL)
-	{
-		// ブロックの数の生成
-		m_pLife = CLife::Create(D3DXVECTOR3(260.0f, 75.0f, 0.0f), 40.0f);
-	}
+	//if (m_pLife == NULL)
+	//{
+	//	// ブロックの数の生成
+	//	m_pLife = CLife::Create(D3DXVECTOR3(260.0f, 75.0f, 0.0f), 40.0f);
+	//}
 
-	CreateSceneObj();
+	//CreateSceneObj();
+
+	// チュートリアル一枚絵の生成
+	CTutorialLogo::Create(D3DXVECTOR3(0.0f, 0.0f, 0.0f), SCREEN_WIDTH, SCREEN_HEIGHT, CResource::TEXTURE_TUTORIALLOGO);
+
+	CPressAnyButton::Create(D3DXVECTOR3(SCREEN_WIDTH / 2 + 500.0f, 650.0f, 0.0f), 150.0f, 100.0f, CResource::TEXTURE_ENTER);
 
 	return S_OK;
 }
