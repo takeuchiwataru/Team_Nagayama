@@ -273,6 +273,10 @@ void CPlayer::Update(void)
 	// プレイヤーの動き
 	Move();
 
+	// モードの取得
+	CManager::MODE mode;
+	mode = CManager::GetMode();
+
 	CollisonAll();
 
 	Life();
@@ -429,7 +433,6 @@ void CPlayer::Move(void)
 	float fMovePlayer = MOVE_PLAYER;	// プレイヤーの移動量を設定
 
 	fMovePlayer = MOVE_PLAYER;
-
 	// ジョイパット
 	if (pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_UP) == true ||
 		pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_DOWN) == true ||
@@ -460,7 +463,6 @@ void CPlayer::Move(void)
 		m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.5f) * fMovePlayer;
 		m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.5f) * fMovePlayer;
 		m_fDestAngle = (cameraRot.y + D3DX_PI * 0.5f);
-
 	}
 	//任意のキー→
 	else if (pInputKeyboard->GetPress(DIK_D) == true)
@@ -478,6 +480,18 @@ void CPlayer::Move(void)
 	{
 		m_pos.y -= 20.0f;
 	}*/
+
+	/*if (pInputKeyboard->GetPress(DIK_W) == true || pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_A) == true)
+	{
+		m_pos.y += 20.0f;
+	}
+	if (pInputKeyboard->GetPress(DIK_S) == true || pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_A) == true)
+	{
+		m_pos.y -= 20.0f;
+	}*/
+
+	//向きの慣性
+	m_fDiffAngle = m_fDestAngle - m_rot.y;
 
 	//向きの慣性
 	m_fDiffAngle = m_fDestAngle - m_rot.y;
@@ -503,7 +517,7 @@ void CPlayer::Move(void)
 		m_rot.y += D3DX_PI* 2.0f;
 	}
 
-	if (m_nOnaraRemain ==  3 || m_nOnaraRemain == 2 || m_nOnaraRemain == 1)
+	if (m_nOnaraRemain == 3 || m_nOnaraRemain == 2 || m_nOnaraRemain == 1)
 	{
 		if (pInputKeyboard->GetTrigger(DIK_W) == true || pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_A) == true)
 		{
@@ -535,7 +549,6 @@ void CPlayer::Move(void)
 			}
 		}
 	}
-
 
 	if (m_move.x < PLAYER_WALK && m_move.x > -PLAYER_WALK && m_move.z < PLAYER_WALK && m_move.z > -PLAYER_WALK && m_bJump == false && m_State != STATE_BLOCK && m_State != STATE_BREAK && m_State != STATE_UPBREAK && m_State != STATE_LAND)
 	{
@@ -583,6 +596,7 @@ void CPlayer::Move(void)
 	{
 		m_move.y -= cosf(D3DX_PI * 0.0f) * GRAVITY;
 	}
+
 #endif
 
 #ifdef _DEBUG
@@ -1777,7 +1791,6 @@ void CPlayer::CollisonObstacle(D3DXVECTOR3 *pos, float fRadius)
 	CHealth *pHealth = NULL;
 
 	pHealth = CGame::GetHealth();
-	
 
 	// 音楽情報を取得
 	CSound *pSound;
