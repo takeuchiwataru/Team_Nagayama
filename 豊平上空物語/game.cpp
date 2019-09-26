@@ -31,6 +31,8 @@
 #include "health.h"
 #include "onararemain.h"
 #include "obstacle.h"
+#include "onaraUI.h"
+#include "resource.h"
 
 //*****************************************************************************
 // マクロ定義
@@ -52,7 +54,7 @@
 #define PLAYERCROSS_WIDTH	(70.0f)							// 残機ロゴのサイズ
 #define PLAYERCROSS_HEIGHT	(50.0f)							// 残機ロゴのサイズ
 
-#define ONARAREMAIN_POS		(D3DXVECTOR3(260.0f, 200.0f, 0.0f))	// ライフの位置
+#define ONARAREMAIN_POS		(D3DXVECTOR3(180.0f, 150.0f, 0.0f))	// ライフの位置
 
 //=============================================================================
 // 静的メンバ変数宣言
@@ -128,16 +130,17 @@ HRESULT CGame::Init(void)
 	}
 
 	
-
 	if (m_pOnaraRemain == NULL)
 	{
 		// おなら残機の生成
-		m_pOnaraRemain = COnaraRemain::Create(ONARAREMAIN_POS, LIFE_SIZE);
+		m_pOnaraRemain = COnaraRemain::Create(ONARAREMAIN_POS, 45.0f);
 	}
 
+	COnaraUI::Create(D3DXVECTOR3(50.0f, 150.0f, 0.0f), 50.0f, 50.0f, CResource::TEXTURE_ONARA_UI);
 
 	// 背景ロゴの生成
-	m_pHealth = CHealth::Create(D3DXVECTOR3(SCREEN_WIDTH / 2 - 450.0f, 150.0f, 0.0f), 90.0f, 40.0f);
+	//m_pHealth = CHealth::Create(D3DXVECTOR3(SCREEN_WIDTH / 2 - 450.0f, 150.0f, 0.0f), 90.0f, 40.0f);
+	m_pHealth = CHealth::Create(D3DXVECTOR3(100.0f, 50.0f, 0.0f), 90.0f, 40.0f);
 
 	return S_OK;
 }
