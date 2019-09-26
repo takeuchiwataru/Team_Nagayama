@@ -4,8 +4,8 @@ Format Text Ver 1.0
 Scene {
 	pos 0.0000 0.0000 2400.0000
 	lookat 0.0000 0.0000 0.0000
-	head -0.8536
-	pich 0.5136
+	head 0.2164
+	pich 0.5436
 	bank 0.0000
 	ortho 0
 	zoom2 3.1250
@@ -19,7 +19,7 @@ Scene {
 }
 Material 2 {
 	"initialShadingGroup" col(0.000 0.000 0.000 1.000) dif(0.800) amb(0.600) emi(0.000) spc(0.000) power(5.00)
-	"lambert2SG" col(0.070 0.010 0.030 1.000) dif(0.800) amb(0.600) emi(0.000) spc(0.000) power(5.00)
+	"lambert2SG" col(0.431 0.071 0.192 1.000) dif(0.800) amb(0.600) emi(0.000) spc(0.000) power(5.00)
 }
 Object "obj1" {
 	visible 15

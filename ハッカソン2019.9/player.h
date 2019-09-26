@@ -134,6 +134,7 @@ public:
 	static bool GetGameOver(void);																		// プレイヤーがゲームオーバーかどうかを取得
 	void SetState(STATE state);
 	static void MinusNumBlock(void) { m_nNumBlock--; }
+	bool GetBulletHit(void) { return m_bBulletHit; }
 
 private:
 	CModel					*m_apModel[MAX_PLAYER];

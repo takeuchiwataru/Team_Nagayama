@@ -170,25 +170,25 @@ void CGame::Update(void)
 	// フェード取得
 	CFade *pFade = CManager::GetFade();
 
-	//if (CPlayer::GetGoal() == true)
-	//{// ゴールしたら
-	//	if (CFade::GetFade() == CFade::FADE_NONE)
-	//	{// ゲームクリアに遷移
-	//		CManager::GetRankingScore(m_pScore->GetScore());
-	//		CManager::GetScore(m_pScore->GetScore());
+	if (CPlayer::GetGoal() == true)
+	{// ゴールしたら
+		if (CFade::GetFade() == CFade::FADE_NONE)
+		{// ゲームクリアに遷移
+			CManager::GetRankingScore(m_pScore->GetScore());
+			CManager::GetScore(m_pScore->GetScore());
 
-	//		pFade->SetFade(CManager::MODE_GAMECLEAR, CFade::FADE_OUT);
-	//	}
-	//}
-	//else if (CPlayer::GetGameOver() == true)
-	//{
-	//	if (CFade::GetFade() == CFade::FADE_NONE)
-	//	{// ゲームオーバーに遷移
-	//		CManager::GetRankingScore(m_pScore->GetScore());
-	//		CManager::GetScore(m_pScore->GetScore());
-	//		pFade->SetFade(CManager::MODE_GAMEOVER, CFade::FADE_OUT);
-	//	}
-	//}
+			pFade->SetFade(CManager::MODE_GAMECLEAR, CFade::FADE_OUT);
+		}
+	}
+	else if (CPlayer::GetGameOver() == true)
+	{
+		if (CFade::GetFade() == CFade::FADE_NONE)
+		{// ゲームオーバーに遷移
+			CManager::GetRankingScore(m_pScore->GetScore());
+			CManager::GetScore(m_pScore->GetScore());
+			pFade->SetFade(CManager::MODE_GAMEOVER, CFade::FADE_OUT);
+		}
+	}
 
 	// デバック用
 	if (pInputKeyboard->GetTrigger(DIK_1) == true)
@@ -680,5 +680,5 @@ void CGame::FieldCreate()
 		CCoin::Create(D3DXVECTOR3(-300.0f, (5000.0f - (nCount * 100)), 250.0f));
 	}
 
-	//CObstacle::Create(D3DXVECTOR3());
+	CObstacle::Create(D3DXVECTOR3(-200.0f, (66000.0f), 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
 }

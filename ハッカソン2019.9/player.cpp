@@ -509,7 +509,7 @@ void CPlayer::Move(void)
 		m_nKey = 0;
 		m_nCountMotion = 0;
 
-		CBAnimation::Create(m_pos, D3DXCOLOR(1.0f, 0.8f, 0.0f, 1.0f), 50.0f, 50.0f, (1.0f / 6.0f), 1.0f, 1.0f, 6, 1, 0, 0, CResource::TEXTURE_HE);
+		CBAnimation::Create(D3DXVECTOR3(m_pos.x, m_pos.y - 80.0f, m_pos.z), D3DXCOLOR(1.0f, 0.8f, 0.0f, 1.0f), 50.0f, 50.0f, (1.0f / 6.0f), 1.0f, 1.0f, 6, 1, 0, 0, CResource::TEXTURE_HE);
 	}
 
 	if (m_move.x < PLAYER_WALK && m_move.x > -PLAYER_WALK && m_move.z < PLAYER_WALK && m_move.z > -PLAYER_WALK && m_bJump == false && m_State != STATE_BLOCK && m_State != STATE_BREAK && m_State != STATE_UPBREAK && m_State != STATE_LAND)
@@ -1544,31 +1544,6 @@ void CPlayer::Life(void)
 		pLife = CGame::GetLife();
 	}
 
-	if (mode == CManager::MODE_TUTORIAL)
-	{
-		if (m_pos.y <= -PLAYER_FALL)
-		{// 床から落ちた時
-			m_bGameOver = true;	// ゲームオーバーにする
-		}
-	}
-	else if (mode == CManager::MODE_GAME)
-	{
-		if (m_pos.y <= -PLAYER_FALL)
-		{// 床から落ちた時
-			m_nLife--;
-
-			if (m_nLife <= 0)
-			{
-				m_bGameOver = true;	// ゲームオーバーにする
-			}
-			else
-			{
-				pLife->AddLife(-1);
-				m_pos = RESPAWN_POS;
-				m_bWaterSound = true;
-			}
-		}
-	}
 }
 
 //=============================================================================
@@ -1599,14 +1574,7 @@ void CPlayer::Health(void)
 
 	if (pHealth->GetHealth() <= 0)
 	{
-		m_nLife--;
-		pLife->AddLife(-1);
-		m_pos = RESPAWN_POS;
-		pHealth->CutHealth(-3);
-		if (m_nLife <= 0)
-		{
-			m_bGameOver = true;	// ゲームオーバーにする
-		}
+		m_bGameOver = true;	// ゲームオーバーにする
 	}
 }
 
