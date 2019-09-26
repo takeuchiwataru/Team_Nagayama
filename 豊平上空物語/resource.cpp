@@ -65,6 +65,7 @@ const char *CResource::m_apTexFilename[] =
 	"data\\TEXTURE\\RESULT\\gameover.png",		// 屁のアニメーション
 	"data\\TEXTURE\\rankinglogo.png",			// ランキングロゴ
 	"data\\TEXTURE\\rankingrank.png",	// ランキングランク
+	"data\\TEXTURE\\onara_counter.png",
 };
 
 //=============================================================================
