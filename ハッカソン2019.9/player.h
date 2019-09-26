@@ -121,6 +121,7 @@ public:
 	void CollisonPolygon(D3DXVECTOR3 *pos, D3DXVECTOR3 fRadius);											// ポリゴンとの判定
 	void CollisionField(void);																			// 床との当たり判定
 	void CollisionGoal(D3DXVECTOR3 *pos, D3DXVECTOR3 *posOld, D3DXVECTOR3 *move, D3DXVECTOR3 radius);	// ゴールとの当たり判定
+	void CollisonObstacle(D3DXVECTOR3 *pos, float fRadius);												// 弾との判定
 
 	D3DXVECTOR3 GetPos(void);																			// 位置の取得
 	D3DXVECTOR3 *GetPosOld(void);																		// 1フレーム前の位置を取得

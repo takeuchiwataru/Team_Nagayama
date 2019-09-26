@@ -45,6 +45,7 @@ public:
 	static CScore *GetScore(void);
 	static CNumBlock *GetNumBlock(void);
 	static CLife *GetLife(void);
+	static CPlayer *GetPlayer(void) { return m_pPlayer; }
 	static CHealth *GetHealth(void) { return m_pHealth; }
 
 	void LoadCoin(void);				// ÉRÉCÉìÇÃì«Ç›çûÇ›
@@ -58,6 +59,7 @@ private:
 	static CNumBlock *m_pNumBlock;
 	static CLife *m_pLife;
 	static CHealth *m_pHealth;
+	static CPlayer *m_pPlayer;
 };
 
 #endif
