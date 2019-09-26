@@ -46,6 +46,7 @@ public:
 	static CScore *GetScore(void);
 	static CNumBlock *GetNumBlock(void);
 	static CLife *GetLife(void);
+	static CPlayer *GetPlayer(void) { return m_pPlayer; }
 	static CHealth *GetHealth(void) { return m_pHealth; }
 	static COnaraRemain *GetOnaraRemain(void);
 
@@ -61,6 +62,7 @@ private:
 	static CLife *m_pLife;
 	static CHealth *m_pHealth;
 	static COnaraRemain *m_pOnaraRemain;
+	static CPlayer *m_pPlayer;
 };
 
 #endif

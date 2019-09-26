@@ -30,6 +30,8 @@
 #include "resource.h"
 #include "health.h"
 #include "onararemain.h"
+#include "BAnimation.h"
+#include "obstacle.h"
 
 //=============================================================================
 // 静的メンバ変数宣言
@@ -60,7 +62,7 @@ CShadow *CPlayer::m_pShadow = NULL;
 #define BLOCK_RANGE				(65.0f)									// プレイヤーとブロックの距離
 #define BLOCK_DECREASE			(30)
 #define LIFE					(3)										// 体力
-#define SCORE_COIN				(1500)									// コイン獲得時のスコア
+#define SCORE_COIN				(100)									// コイン獲得時のスコア
 #define SCORE_GEM				(10000)									// 宝石獲得時のスコア
 #define PLAYER_FALL				(150.0f)								// 落ちる判定
 #define PLAYER_WALK				(0.25f)									// 歩いてる速さの最低値
@@ -95,6 +97,8 @@ CShadow *CPlayer::m_pShadow = NULL;
 #define COLLISION_BULLET		(60)								// 弾が当たる判定
 #define INVINCIBLE_TIME			(120)								// 無敵時間
 #define ONARAREMAIN (3)
+#define INVINCIBLE_TIME			(90)								// 無敵時間
+
 //=============================================================================
 // グローバル変数宣言
 //=============================================================================
@@ -224,8 +228,6 @@ HRESULT CPlayer::Init(void)
 
 	//CBlock::Create(D3DXVECTOR3(m_SetBlockPos.x, m_SetBlockPos.y, m_SetBlockPos.z), CBlock::STATE_PLAYER);
 
-	m_pShadow = CShadow::Create(m_pos);
-
 	return S_OK;
 }
 
@@ -269,8 +271,6 @@ void CPlayer::Update(void)
 {
 	// プレイヤーの動き
 	Move();
-
-	m_pShadow->SetPos(m_pos);
 
 	CollisonAll();
 
@@ -468,6 +468,14 @@ void CPlayer::Move(void)
 			m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
 			m_fDestAngle = (cameraRot.y - D3DX_PI * 0.5f);
 	}
+	/*if (pInputKeyboard->GetPress(DIK_W) == true || pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_A) == true)
+	{
+		m_pos.y += 20.0f;
+	}
+	if (pInputKeyboard->GetPress(DIK_S) == true || pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_A) == true)
+	{
+		m_pos.y -= 20.0f;
+	}*/
 
 	//向きの慣性
 	m_fDiffAngle = m_fDestAngle - m_rot.y;
@@ -506,6 +514,8 @@ void CPlayer::Move(void)
 		// キーとフレームを0にする
 		m_nKey = 0;
 		m_nCountMotion = 0;
+
+		CBAnimation::Create(m_pos, D3DXCOLOR(1.0f, 0.8f, 0.0f, 1.0f), 50.0f, 50.0f, (1.0f / 6.0f), 1.0f, 1.0f, 6, 1, 0, 0, CResource::TEXTURE_HE);
 	}
 
 	if (m_move.x < PLAYER_WALK && m_move.x > -PLAYER_WALK && m_move.z < PLAYER_WALK && m_move.z > -PLAYER_WALK && m_bJump == false && m_State != STATE_BLOCK && m_State != STATE_BREAK && m_State != STATE_UPBREAK && m_State != STATE_LAND)
@@ -548,11 +558,13 @@ void CPlayer::Move(void)
 	m_move.x += (0.0f - m_move.x) * MOVE_INERTIA;
 	m_move.z += (0.0f - m_move.z) * MOVE_INERTIA;
 
+#if(1)
 	// 重力加算
 	if (m_move.y > -30.0f)
 	{
 		m_move.y -= cosf(D3DX_PI * 0.0f) * GRAVITY;
 	}
+#endif
 }
 
 //=============================================================================
@@ -1513,6 +1525,24 @@ void CPlayer::CollisonAll(void)
 		// コインとの当たり判定
 		CollisonCoin(&POS_BODY, ITEM_COLLISION * 100.0f);
 	}
+
+	// 弾との当たり判定
+	if (m_bBulletHit == false)
+	{
+		CollisonObstacle(&m_pos, COLLISION_BULLET);
+	}
+	else
+	{
+		m_nBulletTimer++;
+
+		if (m_nBulletTimer > INVINCIBLE_TIME)
+		{
+			m_bBulletHit = false;
+			// カウンターをリセット
+			m_nBulletTimer = 0;
+			m_nDisTimer = 0;
+		}
+	}
 }
 
 //=============================================================================
@@ -1736,4 +1766,53 @@ bool CPlayer::GetGameOver(void)
 D3DXVECTOR3 CPlayer::GetBlockPos(void)
 {
 	return m_SetBlockPos;
+}
+
+//=============================================================================
+// 弾との当たり判定の処理
+//=============================================================================
+void CPlayer::CollisonObstacle(D3DXVECTOR3 *pos, float fRadius)
+{
+	// モードの取得
+	CManager::MODE mode;
+	mode = CManager::GetMode();
+
+	// 体力を取得
+	CHealth *pHealth = NULL;
+
+	pHealth = CGame::GetHealth();
+	
+
+	// 音楽情報を取得
+	CSound *pSound;
+	pSound = CManager::GetSound();
+
+	CScene *pScene = NULL;
+
+	// 先頭のオブジェクトを取得(メッシュフィールドの優先順位が3だから、3にあるオブジェクトをすべて見る)
+	pScene = CScene::GetTop(BULLET_PRIORITY);
+
+	while (pScene != NULL)
+	{// 優先順位が3のオブジェクトを1つ1つ確かめる
+	 // 処理の最中に消える可能性があるから先に記録しておく
+		CScene *pSceneNext = pScene->GetNext();
+
+		if (pScene->GetDeath() == false)
+		{// 死亡フラグが立っていないもの
+			if (pScene->GetObjType() == CScene::OBJTYPE_BULLET)
+			{// オブジェクトの種類を確かめる
+				if (m_bBulletHit == false)
+				{
+					if (((CObstacle*)pScene)->CollisionPlayer(pos, fRadius) == true)
+					{
+						pHealth->CutHealth(CUT_LIFE);
+						m_bBulletHit = true;
+					}
+				}
+			}
+		}
+
+		// 次のシーンに進める
+		pScene = pSceneNext;
+	}
 }

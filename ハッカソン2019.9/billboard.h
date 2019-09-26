@@ -55,6 +55,7 @@ public:
 	void BindTexture(LPDIRECT3DTEXTURE9	Texture);	// 共有テクスチャを割り当てる
 
 	static CBillboard *Create(D3DXVECTOR3 pos);							// オブジェクトの生成
+	void SetAnimation(int m_PatternAnim, float fUV_U, float fUV_V);
 
 private:
 	D3DXVECTOR3 m_pos;					// 位置

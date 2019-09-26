@@ -14,16 +14,16 @@ NUM_MODEL = 10
 #------------------------------------------------------------------------------
 # モデルファイル名
 #------------------------------------------------------------------------------
-MODEL_FILENAME = data/MODEL/gentleman/body001.x		# [0]体
-MODEL_FILENAME = data/MODEL/gentleman/head000.x		# [1]頭
-MODEL_FILENAME = data/MODEL/gentleman/rightarm.x	# [2]右腕
-MODEL_FILENAME = data/MODEL/gentleman/righthand.x	# [3]右手
-MODEL_FILENAME = data/MODEL/gentleman/leftarm.x		# [4]左腕
-MODEL_FILENAME = data/MODEL/gentleman/lefthand.x	# [5]左手
-MODEL_FILENAME = data/MODEL/gentleman/rightleg.x	# [6]右腿
-MODEL_FILENAME = data/MODEL/gentleman/rightfoot.x	# [7]右足
-MODEL_FILENAME = data/MODEL/gentleman/leftleg.x		# [8]左腿
-MODEL_FILENAME = data/MODEL/gentleman/leftfoot.x	# [9]左足
+MODEL_FILENAME = data/MODEL/meguro/body.x		# [0]体
+MODEL_FILENAME = data/MODEL/meguro/face.x		# [1]頭
+MODEL_FILENAME = data/MODEL/meguro/right_arm.x	# [2]右腕
+MODEL_FILENAME = data/MODEL/meguro/right_hand.x	# [3]右手
+MODEL_FILENAME = data/MODEL/meguro/left_arm.x		# [4]左腕
+MODEL_FILENAME = data/MODEL/meguro/left_hand.x	# [5]左手
+MODEL_FILENAME = data/MODEL/meguro/right_knee.x	# [6]右腿
+MODEL_FILENAME = data/MODEL/meguro/right_foot.x	# [7]右足
+MODEL_FILENAME = data/MODEL/meguro/left_knee.x		# [8]左腿
+MODEL_FILENAME = data/MODEL/meguro/left_foot.x	# [9]左足
 
 #------------------------------------------------------------------------------
 # キャラクター情報

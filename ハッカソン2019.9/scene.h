@@ -75,6 +75,7 @@ public:
 		OBJTYPE_BLOCKPOS,		// ブロックの出現位置
 		OBJTYPE_SHADOW,		// 影
 		OBJTYPE_BULLET,		// 弾
+		OBJTYPE_EFFECT,		// 弾
 		OBJTYPE_MAX			// 総数
 	} OBJTYPE;
 

@@ -105,6 +105,9 @@ void CCoin::Update(void)
 	CInputKeyboard *pInputKeyboard;
 	pInputKeyboard = CManager::GetInputKeyboard();
 
+	CPlayer *pPlayer = NULL;
+	pPlayer = CGame::GetPlayer();
+
 	// ゲームのモードを取得
 	CManager::MODE mode;
 	mode = CManager::GetMode();
@@ -121,6 +124,15 @@ void CCoin::Update(void)
 	if (m_rot.y < -D3DX_PI)
 	{
 		m_rot.y += D3DX_PI * 2.0f;
+	}
+
+	if (pPlayer->GetMove().y >= 0.0f)
+	{
+		m_pos.y -= 0.0f;
+	}
+	else if (pPlayer->GetMove().y < -15.0f)
+	{
+		m_pos.y += pPlayer->GetMove().y + 10.0f;
 	}
 	
 	SetRot(m_rot);
@@ -161,7 +173,7 @@ void CCoin::Draw(void)
 	D3DMATERIAL9 matDef;						// 現在のマテリアル保存用
 	D3DXMATERIAL *pMat;					// マテリアルデータへのポインタ
 
-	// ワールドマトリックスの初期化
+										// ワールドマトリックスの初期化
 	D3DXMatrixIdentity(&m_mtxWorld);
 
 	// 回転を反映
