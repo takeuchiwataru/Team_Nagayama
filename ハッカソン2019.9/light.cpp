@@ -60,7 +60,7 @@ void CLight::Init(void)
 	// ライトの拡散光を設定
 	m_light[0].Diffuse = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);
 	m_light[1].Diffuse = D3DXCOLOR(0.65f, 0.65f, 0.65f, 1.0f);
-	m_light[2].Diffuse = D3DXCOLOR(0.15f, 0.15f, 0.15f, 1.0f);
+	m_light[2].Diffuse = D3DXCOLOR(0.0f, 0.0f, -1.0f, 1.0f);
 
 	// ライトの方向の設定
 	vecDir = D3DXVECTOR3(0.2f, -0.8f, 0.4f);

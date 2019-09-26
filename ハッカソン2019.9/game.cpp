@@ -30,6 +30,7 @@
 #include "life.h"
 #include "text.h"
 #include "health.h"
+#include "obstacle.h"
 
 //*****************************************************************************
 // マクロ定義
@@ -58,6 +59,7 @@ CScore *CGame::m_pScore = NULL;
 CNumBlock *CGame::m_pNumBlock = NULL;
 CLife *CGame::m_pLife = NULL;
 CHealth *CGame::m_pHealth = NULL;
+CPlayer *CGame::m_pPlayer = NULL;
 
 //=============================================================================
 // ゲームクラスのコンストラクタ
@@ -108,8 +110,11 @@ HRESULT CGame::Init(void)
 	pCamera->Init();
 
 	// プレイヤーの生成
-	CPlayer::Create(D3DXVECTOR3(0.0f, 70000.0f, 250.0f));
-	//CPlayer::Create(D3DXVECTOR3(80.0f, 50.0f, 250.0f));
+	if (m_pPlayer == NULL)
+	{
+		m_pPlayer = CPlayer::Create(D3DXVECTOR3(0.0f, 70000.0f, 250.0f));
+		//CPlayer::Create(D3DXVECTOR3(80.0f, 50.0f, 250.0f));
+	}
 
 	BlockCreate();
 	FieldCreate();
@@ -147,6 +152,7 @@ void CGame::Uninit(void)
 	m_pNumBlock = NULL;
 	m_pLife = NULL;
 	m_pHealth = NULL;
+	m_pPlayer = NULL;
 
 	// 全てのオブジェクトを解放
 	CScene::ReleseAll();

@@ -72,7 +72,7 @@ void CCamera::Init(void)
 	mode = CManager::GetMode();
 
 
-	m_posV = D3DXVECTOR3(0.0f, 70100.0f, -1000.0f);	// éãì_
+	m_posV = D3DXVECTOR3(0.0f, 70100.0f, -400.0f);	// éãì_
 	m_posR = D3DXVECTOR3(0.0f, 70050.0f, 0.0f);		// íçéãì_
 
 }

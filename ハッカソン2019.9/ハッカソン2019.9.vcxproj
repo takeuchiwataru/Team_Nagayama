@@ -149,6 +149,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Banimation.cpp" />
     <ClCompile Include="billboard.cpp" />
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="coin.cpp" />
@@ -171,6 +172,7 @@
     <ClCompile Include="meshField.cpp" />
     <ClCompile Include="model.cpp" />
     <ClCompile Include="number.cpp" />
+    <ClCompile Include="obstacle.cpp" />
     <ClCompile Include="particle2D.cpp" />
     <ClCompile Include="particle3D.cpp" />
     <ClCompile Include="particleX.cpp" />
@@ -196,6 +198,7 @@
     <ClCompile Include="tutoriallogo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Banimation.h" />
     <ClInclude Include="billboard.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="coin.h" />
@@ -218,6 +221,7 @@
     <ClInclude Include="meshField.h" />
     <ClInclude Include="model.h" />
     <ClInclude Include="number.h" />
+    <ClInclude Include="obstacle.h" />
     <ClInclude Include="particle2D.h" />
     <ClInclude Include="particle3D.h" />
     <ClInclude Include="particleX.h" />
