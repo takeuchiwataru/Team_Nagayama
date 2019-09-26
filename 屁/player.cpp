@@ -545,7 +545,6 @@ void CPlayer::Move(void)
 				m_nOnaraRemain--;
 
 				pOnaraRemain->AddOnaraRemain(-1);
-
 			}
 		}
 	}

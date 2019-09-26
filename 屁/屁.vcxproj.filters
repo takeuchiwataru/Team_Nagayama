@@ -159,6 +159,7 @@
     <ClCompile Include="tutoriallogo.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="rankinglogo.cpp">
     <ClCompile Include="fullMeguro.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -308,6 +309,7 @@
     <ClInclude Include="tutoriallogo.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="rankinglogo.h">
     <ClInclude Include="fullMeguro.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
