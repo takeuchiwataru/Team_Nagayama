@@ -116,7 +116,7 @@ HRESULT CGame::Init(void)
 	// ÉvÉåÉCÉÑÅ[ÇÃê∂ê¨
 	if (m_pPlayer == NULL)
 	{
-		m_pPlayer = CPlayer::Create(D3DXVECTOR3(0.0f, 70000.0f, 250.0f));
+		m_pPlayer = CPlayer::Create(D3DXVECTOR3(0.0f, 68000.0f, 250.0f));
 		//CPlayer::Create(D3DXVECTOR3(80.0f, 50.0f, 250.0f));
 	}
 
@@ -697,5 +697,155 @@ void CGame::FieldCreate()
 		CCoin::Create(D3DXVECTOR3(-300.0f, (5000.0f - (nCount * 100)), 250.0f));
 	}
 
-	CObstacle::Create(D3DXVECTOR3(-200.0f, (66000.0f), 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	for (int nCount = 0; nCount < 3; nCount++)
+	{//	
+		CObstacle::Create(D3DXVECTOR3(-400.0f + (nCount * 50), 65000.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	for (int nCount = 0; nCount < 3; nCount++)
+	{//	
+		CObstacle::Create(D3DXVECTOR3(100.0f + (nCount * 50), 63000.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	for (int nCount = 0; nCount < 3; nCount++)
+	{//
+		CObstacle::Create(D3DXVECTOR3(200.0f + (nCount * 50), 61000.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	for (int nCount = 0; nCount < 3; nCount++)
+	{//	
+		CObstacle::Create(D3DXVECTOR3(-150.0f + (nCount * 50), 53000.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	for (int nCount = 0; nCount < 5; nCount++)
+	{//	
+		CObstacle::Create(D3DXVECTOR3(-150.0f, 51000.0f - (nCount * 50), 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	for (int nCount = 0; nCount < 3; nCount++)
+	{//	
+		CObstacle::Create(D3DXVECTOR3(-350.0f + (nCount * 50), 46800, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	for (int nCount = 0; nCount < 3; nCount++)
+	{//	
+		CObstacle::Create(D3DXVECTOR3(200.0f + (nCount * 50), 44200, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	for (int nCount = 0; nCount < 5; nCount++)
+	{//
+		CObstacle::Create(D3DXVECTOR3(150.0f + (nCount * 50), 41750, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	for (int nCount = 0; nCount < 5; nCount++)
+	{//
+		CObstacle::Create(D3DXVECTOR3(100.0f, 39000.0f - (nCount * 50.0f), 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	for (int nCount = 0; nCount < 3; nCount++)
+	{//	
+		CObstacle::Create(D3DXVECTOR3(-150.0f + (nCount * 50), 35900, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	for (int nCount = 0; nCount < 5; nCount++)
+	{//	
+		CObstacle::Create(D3DXVECTOR3(-400.0f, 27000.0f - (nCount * 50.0f), 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	for (int nCount = 0; nCount < 10; nCount++)
+	{//	
+		CObstacle::Create(D3DXVECTOR3(0.0f, 25000.0f - (nCount * 50.0f), 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	for (int nCount = 0; nCount < 3; nCount++)
+	{//
+		CObstacle::Create(D3DXVECTOR3(-200.0f + (nCount * 50), 22000, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	CObstacle::Create(D3DXVECTOR3(150.0f, 17700.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(100.0f, 17650.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(50.0f, 17600.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(0.0f, 17550.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-50.0f, 17500.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	for (int nCount = 0; nCount < 3; nCount++)
+	{//	
+		CObstacle::Create(D3DXVECTOR3(-400.0f + (nCount * 50), 16500, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	for (int nCount = 0; nCount < 3; nCount++)
+	{//	
+		CObstacle::Create(D3DXVECTOR3(100.0f + (nCount * 50), 15500, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	CObstacle::Create(D3DXVECTOR3(-100.0f, 13100.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	for (int nCount = 0; nCount < 5; nCount++)
+	{//	
+		CObstacle::Create(D3DXVECTOR3(-300.0f, 12000.0f - (nCount * 50.0f), 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	for (int nCount = 0; nCount < 3; nCount++)
+	{//
+		CObstacle::Create(D3DXVECTOR3(-200.0f + (nCount * 50), 11100, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	CObstacle::Create(D3DXVECTOR3(-400.0f, 8900.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-350.0f, 8850.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-300.0f, 8800.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+
+	CObstacle::Create(D3DXVECTOR3(-400.0f, 5300.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-200.0f, 5300.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(0.0f, 5300.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(200.0f, 5300.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(400.0f, 5300.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+
+	CObstacle::Create(D3DXVECTOR3(100.0f, 64200.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(-100.0f, 62200.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(400.0f, 60000.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(350.0f, 59950.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(300.0f, 59900.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(250.0f, 59850.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(-100.0f, 56200.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(-100.0f, 55000.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-400.0f, 54500.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-100.0f, 54000.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-400.0f, 53500.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(-100.0f, 53000.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(-100.0f, 49700.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(-100.0f, 48200.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(100.0f, 45700.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(250.0f, 39800.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	for (int nCount = 0; nCount < 20; nCount++)
+	{//	
+		CObstacle::Create(D3DXVECTOR3(-300.0f, 38000.0f - (nCount * 50), 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+
+	CObstacle::Create(D3DXVECTOR3(200.0f, 35200.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(0.0f, 30200.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(0.0f, 29200.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(-300.0f, 37800.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CObstacle::Create(D3DXVECTOR3(300.0f, 37800.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(200.0f, 25700.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(200.0f, 20200.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(-200.0f, 18900.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	CObstacle::Create(D3DXVECTOR3(-200.0f, 10200.0f, 250.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
 }

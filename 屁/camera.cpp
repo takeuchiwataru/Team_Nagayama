@@ -41,6 +41,7 @@ CCamera::CCamera()
 	m_rotDest = D3DXVECTOR3(0.0f, 0.0f, 0.0f);	// 目的の向き
 	m_fLength = 0.0f;
 	m_nGemTimer = 0;
+	m_nCnt = 0;
 	// プロジェクションマトリックスの初期化
 	D3DXMatrixIdentity(&m_mtxProjection);
 }
@@ -67,6 +68,8 @@ void CCamera::Init(void)
 	m_DiffAngle = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 	m_fLength = sqrtf((m_posV.x - m_posR.x) * (m_posV.x - m_posR.x) + (m_posV.z - m_posR.z) * (m_posV.z - m_posR.z));
 	m_nGemTimer = 0;
+	m_bHit = false;
+	m_nCnt = 0;
 
 	CManager::MODE mode;
 	mode = CManager::GetMode();
@@ -92,14 +95,37 @@ void CCamera::Update(void)
 	CManager::MODE mode;
 	mode = CManager::GetMode();
 
-	/*CPlayer *pPlayer;
-	mode = CManager::GetMode();*/
+	CPlayer *pPlayer;
+	pPlayer = CGame::GetPlayer();
 
 	if (mode == CManager::MODE_GAME || mode == CManager::MODE_TUTORIAL)
 	{
 		PlayerCamera();
 
-		/*if()*/
+		if (m_bHit == false && pPlayer->GetBulletHit() == true)
+		{
+			m_bHit = true;
+		}
+
+		if (m_bHit == true && pPlayer->GetBulletHit() == false)
+		{
+			m_bHit = false;
+			m_nCnt = 0;
+		}
+
+		if (m_bHit == true && m_nCnt < 6)
+		{
+			if (m_nCnt < 3)
+			{
+				m_posV.x += 10.0f;
+			}
+			if (m_nCnt >= 3)
+			{
+				m_posV.x -= 10.0f;
+			}
+			
+			m_nCnt++;
+		}
 	}
 
 	if (mode == CManager::MODE_TITLE)

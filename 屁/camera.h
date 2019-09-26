@@ -42,6 +42,8 @@ private:
 	D3DXVECTOR3 m_DiffAngle;			// 角度の差分
 	float m_fLength;				// 注視点からの距離
 	int m_nGemTimer;				// カメラワークに使うカウンター
+	int m_nCnt;
+	bool m_bHit;
 	//float fAngle;				
 	D3DXMATRIX	m_mtxProjection;	// プロジェクションマトリックス
 	D3DXMATRIX	m_mtxView;			// ビューマトリックス
