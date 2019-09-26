@@ -432,6 +432,10 @@ void CGame::FieldCreate()
 	// メッシュフィールドの生成
 	//CMeshField::Create(D3DXVECTOR3(-200.0f, -1.5f, 1700.0f));
 
+	int nCount;
+	nCount = 0;
+	
+
 	for (int nCntMesh = 1; nCntMesh < 13; nCntMesh++)
 	{// メッシュシリンダーの生成
 		CMeshCylinder::Create(D3DXVECTOR3(-150.0f, 6000.0f * nCntMesh, 500.0f), 2000.0f, 30.0f);
@@ -456,7 +460,234 @@ void CGame::FieldCreate()
 	CCoin::Create(D3DXVECTOR3(0.0f, 68000.0f, 250.0f));
 	CCoin::Create(D3DXVECTOR3(0.0f, 67500.0f, 250.0f));
 
-	CCoin::Create(D3DXVECTOR3(-200.0f, 65000.0f, 250.0f));
+
+	CCoin::Create(D3DXVECTOR3(0.0f, 67000.0f, 250.0f));
+	CCoin::Create(D3DXVECTOR3(0.0f, 66500.0f, 250.0f));
+	CCoin::Create(D3DXVECTOR3(0.0f, 66000.0f, 250.0f));
+
+	/*CCoin::Create(D3DXVECTOR3(-200.0f, 65000.0f, 250.0f));
 	CCoin::Create(D3DXVECTOR3(-200.0f, 64500.0f, 250.0f));
-	CCoin::Create(D3DXVECTOR3(-200.0f, 64000.0f, 250.0f));
+	CCoin::Create(D3DXVECTOR3(-200.0f, 64000.0f, 250.0f));*/
+
+	for (int nCount = 0; nCount < 20; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-200.0f, (65000.0f-(nCount*500)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 20; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(0.0f, (63000.0f - (nCount * 500)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 19; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(200.0f, (55000.0f - (nCount * 500)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 20; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(200.0f, (45000.0f - (nCount * 500)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 21; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(200.0f, (35000.0f - (nCount * 500)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 18; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(200.0f, (25000.0f - (nCount * 500)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 20; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(200.0f, (15000.0f - (nCount * 500)), 250.0f));
+	}
+
+	//----------------------------------------------------------------------------
+	for (int nCount = 0; nCount < 20; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(400.0f, (65000.0f - (nCount * 200)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 20; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-400.0f, (63000.0f - (nCount * 400)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 19; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(0.0f, (55000.0f - (nCount * 100)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 20; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(400.0f, (45000.0f - (nCount * 500)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 21; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-400.0f, (35000.0f - (nCount * 300)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 18; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(200.0f, (25000.0f - (nCount * 100)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 20; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-400.0f, (15000.0f - (nCount * 300)), 250.0f));
+	}
+
+	//----------------------------------------------------------------------------
+
+	for (int nCount = 0; nCount < 19; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-200.0f, (52200.0f - (nCount * 300)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 20; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-200.0f, (45200.0f - (nCount * 500)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 21; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-200.0f, (35200.0f - (nCount * 400)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 18; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-200.0f, (25200.0f - (nCount * 500)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 20; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-200.0f, (15200.0f - (nCount * 200)), 250.0f));
+	}
+
+	//----------------------------------------------------------------------------
+
+	for (int nCount = 0; nCount < 19; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(200.0f, (52400.0f - (nCount * 500)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 20; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-200.0f, (45400.0f - (nCount * 400)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 21; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(0.0f, (35400.0f - (nCount * 100)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 18; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-400.0f, (25400.0f - (nCount * 300)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 20; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(0.0f, (15400.0f - (nCount * 500)), 250.0f));
+	}
+
+	//--------------------------------------------------------------------------
+
+	for (int nCount = 0; nCount < 19; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(400.0f, (52400.0f - (nCount * 300)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 20; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(0.0f, (45400.0f - (nCount * 500)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 21; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(400.0f, (35400.0f - (nCount * 200)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 18; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-400.0f, (25400.0f - (nCount * 500)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 20; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(0.0f, (15400.0f - (nCount * 200)), 250.0f));
+	}
+
+	//----------------------------------------------------------------------------
+
+	for (int nCount = 0; nCount < 10; nCount++)
+	{
+			CCoin::Create(D3DXVECTOR3(0.0f, (5000.0f - (nCount * 100)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 10; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(50.0f, (5000.0f - (nCount * 100)), 250.0f));
+	}
+	
+	for (int nCount = 0; nCount < 10; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(100.0f, (5000.0f - (nCount * 100)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 10; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(150.0f, (5000.0f - (nCount * 100)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 10; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(200.0f, (5000.0f - (nCount * 100)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 10; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(250.0f, (5000.0f - (nCount * 100)), 250.0f));
+	}
+	
+	for (int nCount = 0; nCount < 10; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(300.0f, (5000.0f - (nCount * 100)), 250.0f));
+	}
+
+	//------------------------------------------------------------------------------
+
+	for (int nCount = 0; nCount < 10; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-50.0f, (5000.0f - (nCount * 100)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 10; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-100.0f, (5000.0f - (nCount * 100)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 10; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-150.0f, (5000.0f - (nCount * 100)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 10; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-200.0f, (5000.0f - (nCount * 100)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 10; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-250.0f, (5000.0f - (nCount * 100)), 250.0f));
+	}
+
+	for (int nCount = 0; nCount < 10; nCount++)
+	{
+		CCoin::Create(D3DXVECTOR3(-300.0f, (5000.0f - (nCount * 100)), 250.0f));
+	}
+
 }
