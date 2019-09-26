@@ -136,6 +136,7 @@ public:
 	void SetState(STATE state);
 	static void MinusNumBlock(void) { m_nNumBlock--; }
 	bool GetBulletHit(void) { return m_bBulletHit; }
+	bool GetPolygonLand(void) { return m_bPolygonLand; }
 
 private:
 	CModel					*m_apModel[MAX_PLAYER];

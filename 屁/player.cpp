@@ -66,7 +66,7 @@ CShadow *CPlayer::m_pShadow = NULL;
 #define SCORE_GEM				(10000)									// 宝石獲得時のスコア
 #define PLAYER_FALL				(150.0f)								// 落ちる判定
 #define PLAYER_WALK				(0.25f)									// 歩いてる速さの最低値
-#define JUMP					(9.0f)									// ジャンプ力
+#define JUMP					(6.0f)									// ジャンプ力
 #define GRAVITY					(0.4f)									// 重力
 #define RESPAWN_POS				(D3DXVECTOR3(80.0f, 40.0f, 250.0f))		// リスポーン位置
 #define BLOCK_PARTICLE_POS		(D3DXVECTOR3(m_SetBlockPos.x, m_SetBlockPos.y - 20.0f, m_SetBlockPos.z))	// ブロック出現のパーティクルの位置
@@ -283,6 +283,7 @@ void CPlayer::Update(void)
 
 	// モーション
 	UpdateMotion();
+
 
 #ifdef _DEBUG
 	CDebugProc::Print("cfccfccfc", "プレイヤーの位置 : x", m_pos.x, "f", "   y", m_pos.y, "f", "  z", m_pos.z, "f");
@@ -582,6 +583,13 @@ void CPlayer::Move(void)
 	if (m_move.y > -30.0f)
 	{
 		m_move.y -= cosf(D3DX_PI * 0.0f) * GRAVITY;
+	}
+#endif
+
+#ifdef _DEBUG
+	if (pInputKeyboard->GetPress(DIK_S) == true)
+	{
+		m_move.y -= cosf(D3DX_PI * 0.0f) * GRAVITY * 5.0f;
 	}
 #endif
 }
