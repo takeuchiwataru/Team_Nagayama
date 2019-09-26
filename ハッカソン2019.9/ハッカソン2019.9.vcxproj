@@ -193,6 +193,7 @@
     <ClCompile Include="title.cpp" />
     <ClCompile Include="titlelogo.cpp" />
     <ClCompile Include="tutorial.cpp" />
+    <ClCompile Include="tutoriallogo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="billboard.h" />
@@ -239,6 +240,7 @@
     <ClInclude Include="title.h" />
     <ClInclude Include="titlelogo.h" />
     <ClInclude Include="tutorial.h" />
+    <ClInclude Include="tutoriallogo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
