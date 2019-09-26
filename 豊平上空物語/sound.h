@@ -36,6 +36,7 @@ public:
 		SOUND_LABEL_SE_TIMEGEM,		// Žæ‚ê‚é‚æ‚¤‚É‚È‚Á‚½Žž‚Ì‰¹
 		SOUND_LABEL_SE_WATER,		// …‚É—Ž‚¿‚½Žž‚Ì‰¹
 		SOUND_LABEL_SE_ATTACK,		// …‚É—Ž‚¿‚½Žž‚Ì‰¹
+		SOUND_LABEL_SE_DAMAGE,		// …‚É—Ž‚¿‚½Žž‚Ì‰¹
 		SOUND_LABEL_MAX,
 	} SOUND_LABEL;
 
@@ -87,6 +88,7 @@ private:
 		{ "data/SE/timegem.wav", 0 },			// •óÎ‚ªŽæ‚ê‚é‚æ‚¤‚É‚È‚Á‚½Žž‚Ì‰¹
 		{ "data/SE/water.wav", 0 },			// …‚É—Ž‚¿‚½Žž‚Ì‰¹
 		{ "data/SE/attack.wav", 0 },			// …‚É—Ž‚¿‚½Žž‚Ì‰¹
+		{ "data/SE/damage.wav", 0 },			// …‚É—Ž‚¿‚½Žž‚Ì‰¹
 	};
 };
 #endif

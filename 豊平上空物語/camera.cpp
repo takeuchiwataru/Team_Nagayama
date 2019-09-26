@@ -12,6 +12,7 @@
 #include "player.h"
 #include "game.h"
 #include "coin.h"
+#include "sound.h"
 
 //*****************************************************************************
 // マクロ定義
@@ -98,6 +99,10 @@ void CCamera::Update(void)
 	CPlayer *pPlayer;
 	pPlayer = CGame::GetPlayer();
 
+	// 音楽情報を取得
+	CSound *pSound;
+	pSound = CManager::GetSound();
+
 	if (mode == CManager::MODE_GAME)
 	{
 		PlayerCamera();
@@ -115,6 +120,11 @@ void CCamera::Update(void)
 
 		if (m_bHit == true && m_nCnt < 6)
 		{
+			if (m_nCnt == 0)
+			{
+				pSound->PlaySound(CSound::SOUND_LABEL_SE_DAMAGE);
+			}
+
 			if (m_nCnt < 3)
 			{
 				m_posV.x += 10.0f;
