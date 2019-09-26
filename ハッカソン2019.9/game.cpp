@@ -30,6 +30,7 @@
 #include "life.h"
 #include "text.h"
 #include "health.h"
+#include "onararemain.h"
 #include "obstacle.h"
 
 //*****************************************************************************
@@ -52,6 +53,8 @@
 #define PLAYERCROSS_WIDTH	(70.0f)							// 残機ロゴのサイズ
 #define PLAYERCROSS_HEIGHT	(50.0f)							// 残機ロゴのサイズ
 
+#define ONARAREMAIN_POS		(D3DXVECTOR3(260.0f, 200.0f, 0.0f))	// ライフの位置
+
 //=============================================================================
 // 静的メンバ変数宣言
 //=============================================================================
@@ -59,6 +62,7 @@ CScore *CGame::m_pScore = NULL;
 CNumBlock *CGame::m_pNumBlock = NULL;
 CLife *CGame::m_pLife = NULL;
 CHealth *CGame::m_pHealth = NULL;
+COnaraRemain *CGame::m_pOnaraRemain = NULL;
 CPlayer *CGame::m_pPlayer = NULL;
 
 //=============================================================================
@@ -130,6 +134,13 @@ HRESULT CGame::Init(void)
 		// ライフの生成
 		m_pLife = CLife::Create(LIFE_POS, LIFE_SIZE);
 	}
+
+	if (m_pOnaraRemain == NULL)
+	{
+		// おなら残機の生成
+		m_pOnaraRemain = COnaraRemain::Create(ONARAREMAIN_POS, LIFE_SIZE);
+	}
+
 
 	// 背景ロゴの生成
 	m_pHealth = CHealth::Create(D3DXVECTOR3(SCREEN_WIDTH / 2 - 450.0f, 150.0f, 0.0f), 90.0f, 40.0f);
@@ -265,6 +276,13 @@ CNumBlock *CGame::GetNumBlock(void)
 CLife *CGame::GetLife(void)
 {
 	return m_pLife;
+}
+//=============================================================================
+// おなら残機の取得
+//=============================================================================
+COnaraRemain *CGame::GetOnaraRemain(void)
+{
+	return m_pOnaraRemain;
 }
 
 //=============================================================================
@@ -456,7 +474,6 @@ void CGame::FieldCreate()
 
 	// 穴
 	CScene3D::Create(D3DXVECTOR3(550.0f, 0.0f, 700.0f), 700.0f, 700.0f, 1.0f, 1.0f);
-
 
 	// コイン生成
 	for (int nCount = 0; nCount < 20; nCount++)

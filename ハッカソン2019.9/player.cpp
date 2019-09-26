@@ -29,6 +29,7 @@
 #include "text.h"
 #include "resource.h"
 #include "health.h"
+#include "onararemain.h"
 #include "BAnimation.h"
 #include "obstacle.h"
 
@@ -94,6 +95,8 @@ CShadow *CPlayer::m_pShadow = NULL;
 #define WATER_PARTICLE_LIFE		(10)								// 水に落ちたときのパーティクルの出現時間
 #define CUT_LIFE				(1)									// 弾が当たったときに減らす体力
 #define COLLISION_BULLET		(60)								// 弾が当たる判定
+#define INVINCIBLE_TIME			(120)								// 無敵時間
+#define ONARAREMAIN (3)
 #define INVINCIBLE_TIME			(90)								// 無敵時間
 
 //=============================================================================
@@ -144,6 +147,7 @@ CPlayer::CPlayer() : CScene(PLAYER_PRIORITY)
 	m_nLife = 0;
 	m_nBulletTimer = 0;
 	m_nDisTimer = 0;
+	m_nOnaraRemain = 0;
 }
 
 //=============================================================================
@@ -212,6 +216,7 @@ HRESULT CPlayer::Init(void)
 	m_bBulletHit = false;
 	m_nBulletTimer = 0;
 	m_nDisTimer = 0;
+	m_nOnaraRemain = ONARAREMAIN;
 
 	// ブロックの位置を保存
 	m_BlockPos = D3DXVECTOR3((sinf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.x, m_pos.y, (cosf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.z);
@@ -273,6 +278,7 @@ void CPlayer::Update(void)
 
 	Health();
 
+	OnaraRemain();
 
 	// モーション
 	UpdateMotion();
@@ -311,7 +317,7 @@ void CPlayer::Update(void)
 	{
 		CDebugProc::Print("c", "ポリゴン乗っていない");
 	}
-
+	CDebugProc::Print("cn", "m_nOnara : ", m_nOnaraRemain);
 	CDebugProc::Print("cfccfccfc", "vtxMax : x", m_aVtxMax[3].x, "f", "   y", m_aVtxMax[3].y, "f", "  z", m_aVtxMax[3].z, "f");
 	CDebugProc::Print("cfccfccfc", "vtxMin : x", m_aVtxMin[3].x, "f", "   y", m_aVtxMin[3].y, "f", "  z", m_aVtxMin[3].z, "f");
 	CDebugProc::Print("cfccfccfc", "offset : x", m_apModel[3]->GetMtxWorld()._41, "f", "   y", m_apModel[3]->GetMtxWorld()._42, "f", "  z", m_apModel[3]->GetMtxWorld()._43, "f");
@@ -667,13 +673,19 @@ void CPlayer::CollisonCoin(D3DXVECTOR3 *pos, float fRadius)
 					int nNumCoin = ((CCoin*)pScene)->GetNumCoin();
 
 					nNumCoin--;
+					
 
 					// ブロックの数取得
 					CScore *pScore = NULL;
 
+					// おなら残機の取得
+					COnaraRemain *pOnaraRemain = NULL;
+
 					if (mode == CManager::MODE_GAME)
 					{
 						pScore = CGame::GetScore();
+
+						pOnaraRemain = CGame::GetOnaraRemain();
 					}
 					else if (mode == CManager::MODE_TUTORIAL)
 					{
@@ -681,6 +693,13 @@ void CPlayer::CollisonCoin(D3DXVECTOR3 *pos, float fRadius)
 					}
 
 					pScore->AddScore(SCORE_COIN);
+
+					if (m_nOnaraRemain < ONARAREMAIN)
+					{
+						m_nOnaraRemain++;
+
+						pOnaraRemain->AddOnaraRemain(1);
+					}
 
 					for (int nCntParticle = 0; nCntParticle < COIN_PARTICLE_NUM; nCntParticle++)
 					{
@@ -759,6 +778,9 @@ void CPlayer::CollisionField(void)
 				{
 					CDebugProc::Print("c", "床乗っていない");
 				}
+
+				
+
 #endif
 			}
 		}
@@ -1561,6 +1583,7 @@ void CPlayer::Health(void)
 	// 残機取得
 	CLife *pLife = NULL;
 
+
 	if (mode == CManager::MODE_TUTORIAL)
 	{
 		pLife = CTutorial::GetLife();
@@ -1577,6 +1600,53 @@ void CPlayer::Health(void)
 		m_bGameOver = true;	// ゲームオーバーにする
 	}
 }
+//=============================================================================
+// おなら残機処理
+//=============================================================================
+void CPlayer::OnaraRemain(void)
+{
+	// 入力情報を取得
+	CInputKeyboard *pInputKeyboard;
+	pInputKeyboard = CManager::GetInputKeyboard();
+
+	// モードを取得
+	CManager::MODE mode;
+	mode = CManager::GetMode();
+
+	// おなら残機取得
+	COnaraRemain *pOnaraRemain = NULL;
+
+	if (mode == CManager::MODE_GAME)
+	{
+		pOnaraRemain = CGame::GetOnaraRemain();
+
+	}
+
+	if (mode == CManager::MODE_GAME)
+	{
+		if (pInputKeyboard->GetTrigger(DIK_W) == true)
+		{// Wを押したらおなら残機を減らす
+
+			if (m_nOnaraRemain > 0)
+			{
+				m_nOnaraRemain--;
+
+				pOnaraRemain->AddOnaraRemain(-1);
+			}
+		}
+
+
+	
+	}
+}
+
+	//if (mode == CManager::MODE_TUTORIAL)
+	//{
+	//	if (m_pos.y <= -PLAYER_FALL)
+	//	{// 床から落ちた時
+	//		m_bGameOver = true;	// ゲームオーバーにする
+	//	}
+	//}
 
 //=============================================================================
 // 右側にいるかどうかを取得

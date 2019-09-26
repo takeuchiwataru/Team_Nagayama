@@ -109,6 +109,7 @@ public:
 	void Action(void);
 	void Life(void);																					// 残機処理
 	void Health(void);																					// 体力処理
+	void OnaraRemain(void);
 	void SetBlock(void);																				// ブロックの設置
 	bool GetRTriangle(void);																			// 右のポリゴンに乗っているかどうかを取得
 	void UpdateMotion(void);																			// モーションの更新処理
@@ -172,6 +173,7 @@ private:
 	int						m_WalkTimer;				// 歩いているときに出るパーティクルに使う
 	int						m_nLife;					// 残機
 	D3DXVECTOR3				m_aVtxMin[MAX_PLAYER], m_aVtxMax[MAX_PLAYER];			// プレイヤーの最小値、最大値
+	int						m_nOnaraRemain;	// おなら残機
 
 	KEY_INFO *m_pKeyInfo;								// キー情報へのポインタ
 	int m_nKey;											// 現在のキーナンバー
